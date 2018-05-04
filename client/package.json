@@ -3,8 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "fusioncharts": "^3.12.2",
     "react": "^16.3.2",
+    "react-circular-progressbar": "^0.8.0",
     "react-dom": "^16.3.2",
+    "react-fusioncharts": "^1.0.5",
+    "react-router-dom": "^4.1.2",
     "react-scripts": "1.1.4"
   },
   "scripts": {

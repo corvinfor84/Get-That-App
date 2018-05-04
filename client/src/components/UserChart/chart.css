@@ -1,0 +1,27 @@
+.br-edges {
+			border-radius: 15px;
+		}
+.user {
+			/*margin-right: 16px;*/
+			height: 400px;
+			margin-bottom: 10px;
+		}
+
+.user-image-pic {
+	height: 200px;
+	width: 200px;
+	border: 2px solid purple;
+	border-radius: 15px;
+	position: relative;
+	margin-top: 2%;
+	margin-left: 1%;
+}
+
+.user-name {
+	position: relative;
+	left: 5%;
+}
+
+.col-md {
+	border: 2px solid purple;
+}

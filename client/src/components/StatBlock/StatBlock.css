@@ -1,0 +1,48 @@
+		.info-quad {
+			height: 120px;
+			margin: 26px 8px 20px;
+			
+		}
+
+		.br-edges {
+			border-radius: 15px;
+		}
+
+		h6 {
+			margin-top: 6px;
+
+		}
+
+		.proBar {
+			height: 80px;
+			width: 80px;
+			margin-left: 1%;
+			/*margin-bottom: 25%;*/
+			position: relative;
+			bottom: 29%;
+		}
+
+		.icon-img {
+			height: 50px;
+			width: 50px;
+			position: relative;
+			bottom: 100px;
+			left: 30%;
+			opacity: .6;
+
+			/*margin-bottom: 10%;*/
+
+		}
+
+		h5 {
+			position: relative;
+			top: 20%;
+		}
+
+		/*.col-sm {
+			opacity: 0.4;
+		}*/
+
+		.col-sm {
+			border: 2px solid purple;
+		}
