@@ -14,6 +14,7 @@ import cart from "../../components/images/cart.png";
 import sum from "../../components/images/sum.png";
 import defaultProfilePic from "../../components/images/default-profile.png";
 
+
 let totalPurchases = "Sum of Purchases";
 let totalPurchPercent = "Purchase Budget";
 let watchedSum = "Sum of Watched Items";

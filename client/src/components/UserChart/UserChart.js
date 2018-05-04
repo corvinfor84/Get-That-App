@@ -5,11 +5,12 @@ import "./chart.css";
  
 			<div className="col-md bg-secondary user br-edges">
 				<div className="aGraph">{props.graph}</div>
-				<img src={props.userPicture} className="user-image-pic"/>
-				<h4 className="user-name"> {props.username} </h4>
-					{props.children}
-				
-				
+					<img src={props.userPicture} className="user-image-pic"/>
+						<h4 className="user-name"> {props.username} </h4>
+							<div id="chart-container"></div>
+					
+								{props.children}
+					
 			</div>
 
 );

@@ -10,3 +10,16 @@
 	height: 100px;
 	/*display: none;*/
 }
+
+.menu-icon {
+	height: 90%;
+	width: 4%;
+	
+	position: relative;
+	top: 2px;
+	left: 2px;
+}
+
+.menu-icon:hover {
+	border: 2px solid black;
+}
