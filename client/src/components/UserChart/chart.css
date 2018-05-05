@@ -33,6 +33,7 @@
 	height: 94%;
 	margin-top: 1%;
 	border-radius: 15px;
+	float: left;
 }
 
 .set-budget {
@@ -47,7 +48,13 @@
 }
 
 .show-search {
-
+	border: 2px solid red;
+	border-radius: 15px;
+	margin-top: 1%;
+	margin-left: 3%;
+	height: 94%;
+	width: 77%;
+	float: left;
 }
 
 #chart-container {

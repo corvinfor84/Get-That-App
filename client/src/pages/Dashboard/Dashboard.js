@@ -12,6 +12,7 @@ import SetBudgetInput from "../../components/SetBudgetInput";
 import SetBudgetBtnClear from "../../components/SetBudgetBtnClear";
 import SearchItemInput from "../../components/SearchItemInput";
 import SearchItemBtn from "../../components/SearchItemBtn";
+import ShowSearchDisplay from "../../components/ShowSearchDisplayBox";
 
 // NPM/External Component Imports
 import CircularProgressbar from 'react-circular-progressbar';
@@ -44,7 +45,6 @@ class Dashboard extends Component {
 		purchased: [],
 
 	}
-
 	
 	render() {
 		return (
@@ -90,6 +90,7 @@ class Dashboard extends Component {
 					BudgetBtn={<SetBudgetBtn />}
 					searchItem={<SearchItemInput />}
 					searchItemBtn={<SearchItemBtn />}
+					showSearch={<ShowSearchDisplay />}
 					/>	
 				</Row>
 			</Container>

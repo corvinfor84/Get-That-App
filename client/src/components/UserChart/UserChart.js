@@ -17,8 +17,10 @@ import "./chart.css";
 										</div>
 									
 				</div>
-										<div className="show-search">{props.showSearch}</div>
-											<div className="aGraph">{props.graph}</div>					
+											<div className="show-search">
+												{props.showSearch}
+											</div>
+																
 												{props.children}					
 			</div>
 
