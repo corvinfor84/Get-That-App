@@ -3,7 +3,7 @@
 		}
 .user {
 			/*margin-right: 16px;*/
-			height: 400px;
+			height: 450px;
 			margin-bottom: 10px;
 			opacity: 0.7;
 		}
@@ -14,19 +14,45 @@
 	border: 2px solid purple;
 	border-radius: 15px;
 	position: relative;
-	margin-top: 2%;
-	margin-left: 1%;
+	margin-top: 4%;
+	
 }
 
 .user-name {
 	position: relative;
-	left: 5%;
+	left: 20%;
 }
 
 .col-md {
 	border: 2px solid purple;
 }
 
-#chart-container {
-	
+.left-user-panel {
+	background: grey;
+	width: 20%;
+	height: 94%;
+	margin-top: 1%;
+	border-radius: 15px;
 }
+
+.set-budget {
+	position: relative;
+	right: 5%;
+}
+
+.search-item {
+	position: relative;
+	right: 5%;
+	margin-top: 5px;
+}
+
+.show-search {
+
+}
+
+#chart-container {
+	height: 100px;
+	width: 100px;
+	border: 2px solid black;
+}
+

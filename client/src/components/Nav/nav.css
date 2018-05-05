@@ -4,11 +4,12 @@
 	height: 50px;
 }
 
-
 .more-nav {
 	background: blue;
 	height: 100px;
 	/*display: none;*/
+	border-bottom-left-radius: 15px;
+	border-bottom-right-radius: 15px;
 }
 
 .menu-icon {
@@ -22,4 +23,10 @@
 
 .menu-icon:hover {
 	border: 2px solid black;
+}
+
+.material-icons {
+	position: relative;
+	left: 20%;
+	top: 20%;
 }

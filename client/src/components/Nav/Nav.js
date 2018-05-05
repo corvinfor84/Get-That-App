@@ -1,6 +1,6 @@
 import React from "react";
 import "./nav.css";
-import menu from "../images/menu.png";
+// import menu from "../images/menu.png";
 
 let showIt = false;
 
@@ -13,10 +13,12 @@ let show = () => {
     }
 }
 
+
+
  const Nav = (props) => (	 
 	 	<div className="container">
 	 		<div className="our-nav">
-	 			<img src={menu} className="menu-icon" onClick={show}/>
+	 			<div className="menu-icon" onClick={show}><i className="material-icons">menu</i></div>
 	 		</div>	
 	 		<div className="more-nav" id="drop-nav" style={{display: showIt ? 'block' : 'none' }}></div>
 	 	</div>

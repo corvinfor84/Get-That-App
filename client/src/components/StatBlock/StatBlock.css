@@ -17,10 +17,11 @@
 		.proBar {
 			height: 80px;
 			width: 80px;
-			margin-left: 1%;
+			margin-left: 0%;
 			/*margin-bottom: 25%;*/
 			position: relative;
-			bottom: 29%;
+			bottom: 32%;
+			right: 4%;
 		}
 
 		.icon-img {
@@ -28,7 +29,7 @@
 			width: 50px;
 			position: relative;
 			bottom: 100px;
-			left: 30%;
+			left: 35%;
 			opacity: .6;
 
 			/*margin-bottom: 10%;*/
