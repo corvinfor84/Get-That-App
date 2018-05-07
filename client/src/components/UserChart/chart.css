@@ -12,7 +12,7 @@
 	height: 200px;
 	width: 200px;
 	border: 2px solid purple;
-	border-radius: 15px;
+	border-radius: 5px;
 	position: relative;
 	margin-top: 4%;
 	
@@ -20,10 +20,21 @@
 
 .user-name {
 	position: relative;
-	left: 20%;
+	text-align: center;
+	margin-top: 1%;
+	margin-bottom: 1px;
+	float: left;
+	width: 100%;
+	font-size: 125%;
+	overflow: hidden;
+	color: black;
 }
 
 .col-md {
+	border: 2px solid pink;
+}
+
+.col-lg {
 	border: 2px solid purple;
 }
 
@@ -32,7 +43,7 @@
 	width: 20%;
 	height: 94%;
 	margin-top: 1%;
-	border-radius: 15px;
+	border-radius: 5px;
 	float: left;
 }
 
@@ -48,18 +59,24 @@
 }
 
 .show-search {
-	border: 2px solid red;
-	border-radius: 15px;
+	border: 2px solid purple;
+	border-radius: 5px;
 	margin-top: 1%;
 	margin-left: 3%;
 	height: 94%;
 	width: 77%;
 	float: left;
+	
 }
 
-#chart-container {
-	height: 100px;
-	width: 100px;
-	border: 2px solid black;
+.show-search-container{
+	position: relative;
+	margin-top: 1%;
+	margin-left: 1%;
+	height: 95%;
+	width: 98%;
+	overflow: auto;
 }
+
+
 

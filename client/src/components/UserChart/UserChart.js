@@ -3,10 +3,10 @@ import "./chart.css";
 
  const UserChart = (props) => (
  
-			<div className="col-md bg-secondary user br-edges">
+			<div className="col-lg bg-secondary user br-edges">
 				<div className="col-sm left-user-panel">
-					<img src={props.userPicture} className="user-image-pic img-thumbnail"/>
-						<h4 className="user-name"> {props.username} </h4>
+					<img src={props.userPicture} alt="user image" className="user-image-pic img-thumbnail"/>
+						<div className="user-name"><strong>{props.username}</strong></div>
 							<div className="set-budget">{props.setBudget}</div>
 								<div className="setBudgetBtn">{props.BudgetBtn}
 									<span>{props.clearBudget}</span>
@@ -18,7 +18,9 @@ import "./chart.css";
 									
 				</div>
 											<div className="show-search">
-												{props.showSearch}
+												<div className="show-search-container">
+														{props.showSearch}
+												</div>
 											</div>
 																
 												{props.children}					

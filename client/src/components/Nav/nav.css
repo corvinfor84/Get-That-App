@@ -13,20 +13,49 @@
 }
 
 .menu-icon {
-	height: 90%;
-	width: 4%;
-	
+	height: 40px;
+	width: 20px;
+	display: inline;
 	position: relative;
-	top: 2px;
-	left: 2px;
-}
-
-.menu-icon:hover {
-	border: 2px solid black;
+	/*top: 2px;
+	left: 2px;*/
 }
 
 .material-icons {
 	position: relative;
-	left: 20%;
-	top: 20%;
+	left: 10px;
+	top: 12px;
+	display: inline;
+	color: rgba(105, 11, 142, 0.5);
 }
+
+.material-icons:hover {
+	border: 2px solid rgba(105, 11, 142, 0.2);
+}
+
+.logged-in {
+	width: 60px;
+	height: 30px;
+	display: inline;
+	position: relative;
+	left: 5%;
+	top: 10px;
+	color: silver;
+}
+
+.get-that-logo {
+	height: 30px;
+	width: 30px;
+	display: inline;
+}
+
+.budget {
+	height: 25px;
+	width: 80px;
+	display: inline;
+	color: silver;
+	position: relative;
+	top: 10px;
+	left: 60%;
+}
+

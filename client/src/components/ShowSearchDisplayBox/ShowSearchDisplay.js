@@ -2,8 +2,8 @@ import React from "react";
 import "./showsearchdisplay.css";
 
  const ShowSearchDisplay = (props) => (
- 	<div>
-		
+ 	<div className="displayContainer">
+		{props.shopCard}
 	</div>	
 
 );

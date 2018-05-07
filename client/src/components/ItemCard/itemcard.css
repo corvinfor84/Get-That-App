@@ -1,0 +1,43 @@
+.item-block {
+	width: 96%;
+	height: 40%;
+	/*background: black;*/
+	display: block;
+}
+
+.item-block:hover {
+	background: rgba(223, 222, 224, 0.1);
+	border-left: 2px solid rgba(105, 11, 142, 0.4);
+	border-right: 4px solid rgba(105, 11, 142, 0.4);
+	border-bottom: 4px solid rgba(105, 11, 142, 0.2);
+	border-radius: 15px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.image-block {
+	height: 90%;
+	width: 20%;
+	/*border: 2px solid yellow;*/
+	margin-top: 1%;
+	margin-left: 1%;
+	float: left;
+	border-radius: 15px;
+
+
+}
+
+.item-title, .item-price {
+	position: relative;
+	top: 5%;
+	left: 2%;
+	/*border: 2px solid yellow;*/
+	width: 55%;
+	height: 18%;
+	overflow: hidden;
+	margin-bottom: 1vh;
+	color: silver;
+
+
+	/*display: inline;*/
+}
+
