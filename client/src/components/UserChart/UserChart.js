@@ -5,7 +5,7 @@ import "./chart.css";
  
 			<div className="col-lg bg-secondary user br-edges">
 				<div className="col-sm left-user-panel">
-					<img src={props.userPicture} alt="user image" className="user-image-pic img-thumbnail"/>
+					<img src={props.userPicture} alt="Profile" className="user-image-pic img-thumbnail"/>
 						<div className="user-name"><strong>{props.username}</strong></div>
 							<div className="set-budget">{props.setBudget}</div>
 								<div className="setBudgetBtn">{props.BudgetBtn}

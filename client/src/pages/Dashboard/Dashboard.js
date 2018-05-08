@@ -7,9 +7,9 @@ import Nav from "../../components/Nav";
 import StatBlock from "../../components/StatBlock";
 import UserChart from "../../components/UserChart";
 import SearchPanel from "../../components/SearchPanel";
-import SetBudgetBtn from "../../components/SetBudgetBtn";
+// import SetBudgetBtn from "../../components/SetBudgetBtn";
 import SetBudgetInput from "../../components/SetBudgetInput";
-import SetBudgetBtnClear from "../../components/SetBudgetBtnClear";
+// import SetBudgetBtnClear from "../../components/SetBudgetBtnClear";
 import SearchItemInput from "../../components/SearchItemInput";
 import SearchItemBtn from "../../components/SearchItemBtn";
 import ShowSearchDisplay from "../../components/ShowSearchDisplayBox";
@@ -36,9 +36,10 @@ let randNum = "$96.45";
 let randNum1 = "$1129.63";
 let randNum2 = "$343.12";
 let randNum3 = "$2396.66";
-let moneySign = "$";
 
-class Dashboard extends Component {
+
+
+class Dashboard extends React.Component {
 	state = {
 		items: [
 		{
@@ -68,12 +69,14 @@ class Dashboard extends Component {
 		budget:0.00
 	}
 
-	addedBudget = (e) => {
-		let budgetValue = e.target.elements.SetBudgetInput.college.value;
-		console.log("button works");
-		console.log(budgetValue)
-	}
-
+	hello = () => {
+	// e.preventDefault();
+  
+  console.log("Working!!!");
+  // let formValue = e.target.elements.budgetSetter.value;
+  
+  
+}
 
 	render() {
 		return (
@@ -115,19 +118,19 @@ class Dashboard extends Component {
 						userPicture={defaultProfilePic}
 						username={dummyname}
 						setBudget={<SetBudgetInput
-							dollar={moneySign}
-							/>}
-						clearBudget={<SetBudgetBtnClear 
+							btnName1={`Set Budget`}
 							btnName={`Clear Budget`}
+							budgetVal={this.state.budget}
 							/>}
-						BudgetBtn={<SetBudgetBtn 
-							btnName={`Set Budget`}
-							addBudget={this.addedBudget}
-							/>}
+						
 						searchItem={<SearchItemInput />}
-						searchItemBtn={<SearchItemBtn />}
+						searchItemBtn={<SearchItemBtn 
+							label={`Search`}
+							searched={this.hello}
+							/>}
 							showSearch={this.state.items.map((itemcomponent) => 
 								<ItemCard 
+										key={itemcomponent.title}
 										itemImage={itemcomponent.image}
 										title={itemcomponent.title}
 										price={`$` + itemcomponent.price}

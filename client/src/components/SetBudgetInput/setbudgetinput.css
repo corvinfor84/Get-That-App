@@ -2,3 +2,26 @@
 	position: relative;
 	left: 5%;
 }
+
+.set-budget-btn {
+	position: relative;
+	left: 4%;
+	margin-top: 5px;
+	width: 100%;
+}
+
+.set-budget-btn-clr{
+	position: relative;
+	left: 5%;
+	margin-top: 5px;
+	width: 99%;
+}
+
+.button-row {
+	/*border: 2px solid green;*/
+	margin-left: 3px;
+}
+
+/*.budget-form {
+	width: 100%;
+}*/

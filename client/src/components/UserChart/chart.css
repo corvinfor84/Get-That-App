@@ -30,10 +30,6 @@
 	color: black;
 }
 
-.col-md {
-	border: 2px solid pink;
-}
-
 .col-lg {
 	border: 2px solid purple;
 }
@@ -41,7 +37,7 @@
 .left-user-panel {
 	background: grey;
 	width: 20%;
-	height: 94%;
+	height: 95%;
 	margin-top: 1%;
 	border-radius: 5px;
 	float: left;
@@ -63,7 +59,7 @@
 	border-radius: 5px;
 	margin-top: 1%;
 	margin-left: 3%;
-	height: 94%;
+	height: 95%;
 	width: 77%;
 	float: left;
 	

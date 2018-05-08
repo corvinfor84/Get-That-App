@@ -6,6 +6,7 @@
 
 .more-nav {
 	background: blue;
+	opacity: 0.1;
 	height: 100px;
 	/*display: none;*/
 	border-bottom-left-radius: 15px;
@@ -30,7 +31,7 @@
 }
 
 .material-icons:hover {
-	border: 2px solid rgba(105, 11, 142, 0.2);
+	/*border: 2px solid rgba(105, 11, 142, 0.2);*/
 }
 
 .logged-in {
