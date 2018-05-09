@@ -1,3 +1,6 @@
+//this is just to show something working
+//to use with react, need to convert to Cheerio and Axios
+
 var cheerio = require("cheerio");
 var request = require("request");
 var qp = require('query-parse');
@@ -11,6 +14,7 @@ var paramStr = qp.toString({
 var low = 1000;
 var high = 2000;
 var queryURL = query + paramStr + "&low-price=" + low + "&high-price=" + high;
+
 request(queryURL,
   function(error, response, html) {
     console.log(queryURL);
