@@ -22,7 +22,7 @@ const shopSchema = new Schema({
     "Price needs to be bigger than 0"
   ]},
   //the date the item should be purchased by user
-  goal_date: { type: Date, default: Date.now },
+  goal_date: { type: Date, default: Date.now }, //Cornell's idea is actually not have goal date, just say how mahy days they would like to save
   //the saving frequency
   units: { type: Number, default: 7 },
   //amount to be saved/unit as calculated when user added to watch list

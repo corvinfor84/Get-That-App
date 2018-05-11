@@ -3,18 +3,20 @@ const cheerio = require("cheerio");
 const qp = require("query-parse"); // may need this on the front end to send keyword to back end. the get request from front end needs to be good
 
 module.exports = {
-  scrape: function(req, res) {
+  findAll: function(req, res) {
     let base_url = 'http://www.amazon.com/gp/search/';
 
     //need to modify
-    let paramStr = qp.toString({
-      keywords: req.query //from front end react goes through as axios get
-    })
-    let queryURL = base_url + paramStr;
+    // let paramStr = qp.toString({
+    //   keywords: req.query //from front end react goes through as axios get
+    // })
+    // let queryURL = base_url + paramStr;
+    //
+    // console.log(queryURL)
 
-    console.log(queryURL)
+    const params = Object.assign(req.query);
 
-    axios.get(queryURL).then( (response) => {
+    axios.get(queryURL, {params}).then( (response) => {
 
           let $ = cheerio.load(response.data);
           let results = [];
