@@ -7,14 +7,11 @@ import Nav from "../../components/Nav";
 import StatBlock from "../../components/StatBlock";
 import UserChart from "../../components/UserChart";
 import SearchPanel from "../../components/SearchPanel";
-// import SetBudgetBtn from "../../components/SetBudgetBtn";
 import SetBudgetInput from "../../components/SetBudgetInput";
-// import SetBudgetBtnClear from "../../components/SetBudgetBtnClear";
 import SearchItemInput from "../../components/SearchItemInput";
 import SearchItemBtn from "../../components/SearchItemBtn";
 import ShowSearchDisplay from "../../components/ShowSearchDisplayBox";
 import ItemCard from "../../components/ItemCard";
-// import DropdownBtn from "../../components/DropdownBtn";
 
 // NPM/External Component Imports
 import CircularProgressbar from 'react-circular-progressbar';
@@ -27,18 +24,12 @@ import cart from "../../components/images/cart.png";
 import sum from "../../components/images/sum.png";
 import defaultProfilePic from "../../components/images/default-profile.png";
 
-// StatBlock Component - Header/Title text
-let totalPurchases = "Sum of Purchases";
-let totalPurchPercent = "Purchase Budget";
-let watchedSum = "Sum of Watched";
-let watchedSumPercent = "Watched Budget";
 // Dummy Data - Discard when done!!!
 let dummyname = "Cornell";
 let randNum = "$96.45";
 let randNum1 = "$1129.63";
 let randNum2 = "$343.12";
 let randNum3 = "$2396.66";
-
 
 
 class Dashboard extends React.Component {
@@ -79,6 +70,13 @@ handleInputChange = event => {
     });
   };
 
+watchAndCalculate = (value) => {
+	// this function should add the item to the db and do the calculation. or contain a seperate function
+   // inside this function that handles the calculation based on the value of which button was pressed.
+   // THIS FUNCTION IS LINKED TO ITEM CARD WHICH IS NESTED INSIDE OF USERCHART.
+   console.log("Watch & Calculate");
+}
+
 	render() {
 		return (
 		<Wrapper>
@@ -88,25 +86,25 @@ handleInputChange = event => {
 			<Container>
 				<Row>
 					<StatBlock
-					title={totalPurchases}
+					title={`Sum of Purchases`}
 					amount={randNum}
 					progress={<CircularProgressbar percentage={11} initialAnimation={true}/>}
 					icon={cart}
 					/>
 					<StatBlock
-					title={totalPurchPercent}
+					title={`Purchase Budget`}
 					amount={randNum1}
 					progress={<CircularProgressbar percentage={20} initialAnimation={true}/>}
 					icon={budget}
 					/>
 					<StatBlock
-					title={watchedSum}
+					title={`Sum of Watched`}
 					amount={randNum2}
 					progress={<CircularProgressbar percentage={87} initialAnimation={true}/>}
 					icon={sum}
 					/>
 					<StatBlock
-					title={watchedSumPercent}
+					title={`Watched Budget`}
 					amount={randNum3}
 					progress={<CircularProgressbar percentage={46} initialAnimation={true}/>}
 					icon={eye}
@@ -134,6 +132,7 @@ handleInputChange = event => {
 										itemImage={itemcomponent.image}
 										title={itemcomponent.title}
 										price={`$` + itemcomponent.price}
+										watchAndCalculate={this.watchAndCalculate}
 										
 								/>
 							)}

@@ -9,21 +9,21 @@ import "./itemcard.css";
 						<div className="item-price"><strong>Price: </strong>{props.price}</div>
 									<div className="item-PB-btn">
 										<button 
-										 
+										onClick={props.watchAndCalculate} 
 										type="button" 
 										className="btn btn-outline-light btn-sm value-btn"
 										value={`7`}
 										>Purchase in 7 days</button>
 										
 										<button 
-										 
+										onClick={props.watchAndCalculate}
 										type="button" 
 										className="btn btn-outline-light btn-sm value-btn"
 										value={`14`}
 										>Purchase in 14 days</button>
 
 										<button 
-										 
+										onClick={props.watchAndCalculate} 
 										type="button" 
 										className="btn btn-outline-light btn-sm value-btn"
 										value={`30`}
