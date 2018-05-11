@@ -14,6 +14,8 @@ import SearchItemInput from "../../components/SearchItemInput";
 import SearchItemBtn from "../../components/SearchItemBtn";
 import ShowSearchDisplay from "../../components/ShowSearchDisplayBox";
 import ItemCard from "../../components/ItemCard";
+// import DropdownBtn from "../../components/DropdownBtn";
+
 // NPM/External Component Imports
 import CircularProgressbar from 'react-circular-progressbar';
 // CircularProgress Bar CSS
@@ -31,7 +33,7 @@ let totalPurchPercent = "Purchase Budget";
 let watchedSum = "Sum of Watched";
 let watchedSumPercent = "Watched Budget";
 // Dummy Data - Discard when done!!!
-let dummyname = "Cornell Blue";
+let dummyname = "Cornell";
 let randNum = "$96.45";
 let randNum1 = "$1129.63";
 let randNum2 = "$343.12";
@@ -64,19 +66,18 @@ class Dashboard extends React.Component {
 		link: "https://www.amazon.com/dp/B01K9S24BU/ref=s9_acsd_bw_wf_a_dlp6e791_cdl_8?pf_rd_m=ATVPDKIKX0DER&pf_rd_s=center-1&pf_rd_r=8QGVJ5JFPY1SC3KFK7BX&pf_rd_t=101&pf_rd_p=0&pf_rd_i=283155&th=1"
 		}
 		],
+		budget: "",
 		watching: [],
-		purchased: [],
-		budget:0.00
+		purchased: []
+		
 	}
 
-	hello = () => {
-	// e.preventDefault();
-  
-  console.log("Working!!!");
-  // let formValue = e.target.elements.budgetSetter.value;
-  
-  
-}
+handleInputChange = event => {
+    const { name, value } = event.target;
+    this.setState({
+      [name]: value 
+    });
+  };
 
 	render() {
 		return (
@@ -115,18 +116,17 @@ class Dashboard extends React.Component {
 			<Container>
 				<Row>
 					<UserChart 
+						handleInputChange = {this.handleInputChange}
+						btnName={`Set Budget`}
+						btnName1={`Clear Budget`}
 						userPicture={defaultProfilePic}
 						username={dummyname}
-						setBudget={<SetBudgetInput
-							btnName1={`Set Budget`}
-							btnName={`Clear Budget`}
-							budgetVal={this.state.budget}
-							/>}
+		
 						
 						searchItem={<SearchItemInput />}
 						searchItemBtn={<SearchItemBtn 
 							label={`Search`}
-							searched={this.hello}
+							
 							/>}
 							showSearch={this.state.items.map((itemcomponent) => 
 								<ItemCard 
@@ -134,6 +134,7 @@ class Dashboard extends React.Component {
 										itemImage={itemcomponent.image}
 										title={itemcomponent.title}
 										price={`$` + itemcomponent.price}
+										
 								/>
 							)}
 

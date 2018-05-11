@@ -43,3 +43,9 @@
 	/*display: inline;*/
 }
 
+.value-btn {
+	position: relative;
+	left: 2%;
+	top: 10px;
+	margin-right: 1%;
+}

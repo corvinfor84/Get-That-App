@@ -22,6 +22,7 @@ const logMessage = "welcome, ";
 	 				<div className="logged-in">{logMessage} {props.login}</div>
 	 					<div className="get-that-logo">{props.getThatLogo}</div>
 	 						<div className="budget">Budget: {props.userBudget}</div>
+	 						
 	 		</div>	
 	 		<div className="more-nav" id="drop-nav" style={{display: showIt ? 'block' : 'none' }}></div>
 	 	</div>

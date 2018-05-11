@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "animejs": "^2.2.0",
+    "bootstrap": "^4.1.1",
     "fusioncharts": "^3.12.2",
     "react": "^16.3.2",
     "react-circular-progressbar": "^0.8.0",

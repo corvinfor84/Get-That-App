@@ -3,25 +3,27 @@ import "./setbudgetinput.css";
 
 const PushData = (e) => {
 	// e.preventDefault();
-	let formValue = e.target.name.value;
+	// let formValue = e.target.name.value;
 	console.log("connected");
-	console.log(formValue);
+	// console.log(formValue);
 }
  const SetBudgetInput = (props) => (
  <div>
  <form>
  	<div className="input-class">
  		<input 
- 		type="text" 
- 		className="set-budget-input input-group" 
- 		name="toys" 
- 		value={props.budgetVal}
+ 		className="set-budget-input input-group"
+ 		type="text"  
+ 		name="budgetVal" 
+ 		value={props.bV}
+ 		onChange={props.handleInputChange}
  		placeholder=" Enter budget"
+ 		required
  		/>
  	</div>
  	<div className="button-row">
 		<button
-		onClick={PushData}
+		onClick={props.PushData}
 		type="button" 
 		className="btn btn-outline-light btn-sm set-budget-btn" 
 		>
