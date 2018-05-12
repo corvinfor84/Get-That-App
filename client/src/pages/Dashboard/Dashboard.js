@@ -100,8 +100,14 @@ class Dashboard extends Component {
 	//need something here to handle saving budget input and user profile into db
 	//need to save to db
 
+	handlePurchaseSave = title => {
+    const purchase = this.state.items.find(purchase => purchase.title === title);
+    axios.post("/api/purchases", purchase).then(res => this.getResults());
+		console.log(purchase);
+  };
 
 	watchAndCalculate = (value) => {
+
 		// this function should add the item to the db and do the calculation. or contain a seperate function
 	   // inside this function that handles the calculation based on the value of which button was pressed.
 	   // THIS FUNCTION IS LINKED TO ITEM CARD WHICH IS NESTED INSIDE OF USERCHART.
@@ -159,14 +165,17 @@ class Dashboard extends Component {
 						searchItemBtn={<SearchItemBtn
 						label={`Search`}
 					/>}
-							showSearch={this.state.items.map((itemcomponent) =>
+							showSearch={this.state.items.map(itemcomponent =>
 								<ItemCard
-										key={itemcomponent.title}
+										key = {itemcomponent.title}
+										id={itemcomponent.title}
 										itemImage={itemcomponent.image}
 										title={itemcomponent.title}
 										price={`$` + itemcomponent.price}
 										link = {itemcomponent.link}
 										watchAndCalculate={this.watchAndCalculate}
+										handlePurchaseSave = {this.handlePurchaseSave}
+
 
 								/>
 							)}

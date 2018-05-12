@@ -23,7 +23,13 @@ app.use('/', require("./routes"));
 // Set up promises with mongoose
 mongoose.Promise = global.Promise;
 // Connect to the Mongo DB
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/getthat"); //the database in mongod is getthat
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/getthat")
+.then(function(res){
+  console.log("Mongo Connected")
+})
+.catch(function(err){
+  console.log(err)
+}); //the database in mongod is getthat
 
 // Start the API server
 app.listen(PORT, () =>

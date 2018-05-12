@@ -9,7 +9,7 @@ import "./itemcard.css";
 						<div className="item-price"><strong>Price: </strong>{props.price}</div>
 									<div className="item-PB-btn">
 										<button
-										onClick={props.watchAndCalculate}
+										onClick={() => props.handlePurchaseSave(props.title)}
 										type="button"
 										className="btn btn-outline-light btn-sm value-btn"
 										value={`7`}

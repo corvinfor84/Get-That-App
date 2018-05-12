@@ -17,12 +17,20 @@ router.get("/api/purchases", function(req, res){//should we change this to /user
 
 router.post("/api/purchases", function(req, res){
   const purchase = {
-    _id: req.body._id
+    title: req.body.title,
+    link: req.body.link,
+    price: req.body.price,
+    username: "Jina",
+    image: req.body.image
+
   };
   db.Purchase
     .create(purchase)
     .then(dbPurchase => res.json(dbPurchase))
-    .catch(err => res.status(422).json(err));
+    .catch(err => {
+      console.log(err)
+      res.status(422).json(err)
+    });
 })
 
 router.get("/api/scrape", function(req, res){
