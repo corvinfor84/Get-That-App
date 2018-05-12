@@ -16,8 +16,8 @@ router.get("/api/purchases", function(req, res){//should we change this to /user
 });
 
 router.post("/api/purchases", function(req, res){
-  const purcahse = {
-    _id = req.body._id
+  const purchase = {
+    _id: req.body._id
   };
   db.Purchase
     .create(purchase)
@@ -28,7 +28,7 @@ router.post("/api/purchases", function(req, res){
 router.get("/api/scrape", function(req, res){
   const params = Object.assign(req.query);
   axios
-  .get('http://www.amazon.com/gp/search/?keywords=macbook'
+  .get('http://www.amazon.com/gp/search/?keywords=hello+kitty'
 
   //, {
   //  params
@@ -60,10 +60,11 @@ router.get("/api/scrape", function(req, res){
         });
       }
     });
+    results = results.slice(2,)
     return(results);
   })
-  .then ((results) => {console.log(results)});
-  .then(results => res.json(results));
+  //.then ((results) => {console.log(results)})
+  .then(results => res.json(results))
   .catch(err => res.status(422).json(err));
 })
 
