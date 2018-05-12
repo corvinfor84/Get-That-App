@@ -11,10 +11,10 @@ const PushData = (e) => {
  <div>
  <form>
  	<div className="input-class">
- 		<input 
+ 		<input
  		className="set-budget-input input-group"
- 		type="text"  
- 		name="budgetVal" 
+ 		type="text"
+ 		name="budgetVal"
  		value={props.bV}
  		onChange={props.handleInputChange}
  		placeholder=" Enter budget"
@@ -24,17 +24,17 @@ const PushData = (e) => {
  	<div className="button-row">
 		<button
 		onClick={props.PushData}
-		type="button" 
-		className="btn btn-outline-light btn-sm set-budget-btn" 
+		type="button"
+		className="btn btn-outline-light btn-sm set-budget-btn"
 		>
 			{props.btnName1}
 		</button>
 	</div>
 </form>
-			<button 
+			<button
 			onClick={props.removeBudget}
-			type="button" 
-			className="btn btn-outline-light btn-sm set-budget-btn-clr" 
+			type="button"
+			className="btn btn-outline-light btn-sm set-budget-btn-clr"
 			>
 				{props.btnName}
 			</button>
