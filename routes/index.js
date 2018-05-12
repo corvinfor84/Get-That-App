@@ -34,13 +34,12 @@ router.post("/api/purchases", function(req, res){
 })
 
 router.get("/api/scrape", function(req, res){
-  const params = Object.assign(req.query);
-  axios
-  .get('http://www.amazon.com/gp/search/?keywords=hello+kitty'
 
-  //, {
-  //  params
-  //}
+  const params = req.query;
+  console.log(params);
+  axios
+  .get('http://www.amazon.com/gp/search?keywords=books'
+  //,{params}
 )
   .then(response => {
     let $ = cheerio.load(response.data);
@@ -55,20 +54,27 @@ router.get("/api/scrape", function(req, res){
       let priceWhole = $(element).find($(".sx-price-whole")).text();
       let priceDec = $(element).find($(".sx-price-fractional")).text();
       let image = $(element).find($(".s-access-image.cfMarker")).attr("src");
+      let range = $(element).find($(".sx-dash-formatting")).text();
+      console.log(range);
+
       //console.log(priceWhole);
-      if (!priceWhole.includes("Sponsored")){
+
+      //it is hard to scrape from Amazon
+      if (!priceWhole.includes("Sponsored") && range != "-"){
         let price = parseFloat(priceWhole.replace(/,/g, '')) + parseFloat(priceDec)/100;
         console.log(price);
         //console.log("Sponsored, will not include in calc");
-        results.push({
-          title: title,
-          link: link,
-          price: price,
-          image: image
-        });
+        if (!isNaN(price)){
+          results.push({
+            title: title,
+            link: link,
+            price: price,
+            image: image
+          })
+        }
       }
     });
-    results = results.slice(2,)
+    results = results.slice(2,);
     return(results);
   })
   //.then ((results) => {console.log(results)})
