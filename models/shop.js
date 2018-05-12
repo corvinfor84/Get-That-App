@@ -3,17 +3,15 @@ const Schema = mongoose.Schema;
 
 const purchaseSchema = new Schema({
   //the unique identifier of the database
-  _id: { type: Schema.Types.ObjectId, required: true },
+  // _id: { type: Schema.Types.ObjectId, required: true },
   //the user who saved the item, usernames are unique to user
   username: { type: String, required: true },
   //title of item user saved
   title: { type: String, required: true },
   //url of item saved
-  url: { type: String, required: true },
+  link: { type: String, required: true },
   //image url of item saved
   image: { type: String },
-  //department of item saved
-  department: { type: String },
   //price of item saved (need to be greater than 0)
   price: { type: Number
           // ,validate: [

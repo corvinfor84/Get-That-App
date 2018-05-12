@@ -1,3 +1,3 @@
 module.exports = {
-  Shop: require("./shop")
+  Purchase: require("./shop")
 };
