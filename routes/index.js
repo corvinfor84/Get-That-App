@@ -34,12 +34,9 @@ router.post("/api/purchases", function(req, res){
 })
 
 router.get("/api/scrape", function(req, res){
-
-  const params = req.query;
-  console.log(params);
+  console.log(req.query);
   axios
-  .get('http://www.amazon.com/gp/search?keywords=books'
-  //,{params}
+  .get('http://www.amazon.com/gp/search', {params:req.query} //this query only works for some searchs. web scraping is not clean
 )
   .then(response => {
     let $ = cheerio.load(response.data);

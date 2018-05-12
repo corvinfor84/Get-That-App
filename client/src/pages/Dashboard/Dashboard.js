@@ -7,10 +7,10 @@ import Nav from "../../components/Nav";
 import StatBlock from "../../components/StatBlock";
 import UserChart from "../../components/UserChart";
 import ItemCard from "../../components/ItemCard";
-
 import SearchPanel from "../../components/SearchPanel";
-import SearchItemInput from "../../components/SearchItemInput";
-import SearchItemBtn from "../../components/SearchItemBtn";
+
+//import SearchItemInput from "../../components/SearchItemInput";
+//import SearchItemBtn from "../../components/SearchItemBtn";
 //import ShowSearchDisplay from "../../components/ShowSearchDisplayBox";
 //import SetBudgetInput from "../../components/SetBudgetInput";
 
@@ -30,7 +30,6 @@ import defaultProfilePic from "../../components/images/default-profile.png";
 
 
 // Dummy Data - Discard when done!!!
-let dummyname = "Cornell";
 let randNum = "$96.45";
 let randNum1 = "$1129.63";
 let randNum2 = "$343.12";
@@ -40,7 +39,7 @@ class Dashboard extends Component {
 	state = {
 		items: [], //this is from website
 		purchases: [], //this is from db
-		keywords: "lol", //this is from user
+		keyword: "", //this is from user
 		budget: "", //this is from user
 		saved_budget: "",
 		username: "Jina" //this is from autho0
@@ -56,15 +55,14 @@ class Dashboard extends Component {
 		    this.setState({
 		      [name]: value
 		    });
-				console.log(this.state.keywords);
 		  };
 
 	//get results from web
 	getResults = () => {
-		console.log(this.state.keywords)
-		axios.get("/api/scrape", {
-			keywords: this.state.keywords
-		})
+		console.log(this.state.keyword)
+		axios.get("/api/scrape", {params:{
+			keyword: this.state.keyword
+		}})
 			.then(res =>
 
 				this.setState({
@@ -158,20 +156,16 @@ class Dashboard extends Component {
 				</Row>
 				<Row>
 					<UserChart
-
 						handleInputChange_budget = {this.handleInputChange_budget}
 						handleInputChange = {this.handleInputChange}
 						btnName={`Set Budget`}
-						btnName1={`Clear Budget`}
 						userPicture={defaultProfilePic}
-						username={dummyname}
+						username={this.state.username}
 						//handleSetBudget = {this.handleSetBudget} //pushData
 						keyword = {this.state.keyword}
 						handleSearch = {this.handleSearch}
-						searchItem={<SearchItemInput />}
-						searchItemBtn={<SearchItemBtn
-						label={`Search`}/>}
-							showSearch={this.state.items.map(itemcomponent =>
+
+						showSearch={this.state.items.map(itemcomponent =>
 								<ItemCard
 										key = {itemcomponent.title}
 										id={itemcomponent.title}
@@ -181,13 +175,11 @@ class Dashboard extends Component {
 										link = {itemcomponent.link}
 										watchAndCalculate={this.watchAndCalculate}
 										handlePurchaseSave = {this.handlePurchaseSave}
-
-
 								/>
 							)}
-
 					/>
 				</Row>
+
 				<Row>
 					<SearchPanel />
 				</Row>
