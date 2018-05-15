@@ -1,6 +1,6 @@
 import React from "react";
 import "./itemcard.css";
-
+ 
  const ItemCard = (props) => (
 
 			<div className="item-block">

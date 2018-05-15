@@ -49,3 +49,16 @@
 	top: 10px;
 	margin-right: 1%;
 }
+
+a {
+	color: silver;
+}
+
+a:hover {
+	color: purple;
+	text-decoration: none;
+}
+
+a:active {
+	color: black;
+}

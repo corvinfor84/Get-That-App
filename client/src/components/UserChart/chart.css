@@ -84,3 +84,16 @@
 	width: 98%;
 	overflow: auto;
 }
+
+.show-search-container::-webkit-scrollbar {
+    width: 1em;
+}
+ 
+.show-search-container::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(227, 233, 242,0.7);
+}
+ 
+.show-search-container::-webkit-scrollbar-thumb {
+  background-color: purple;
+  outline: 1px solid purple;
+}

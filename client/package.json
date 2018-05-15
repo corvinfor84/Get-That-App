@@ -4,10 +4,11 @@
   "private": true,
   "proxy": "http://localhost:3001/",
   "dependencies": {
-    "axios": "^0.17.1",
     "animejs": "^2.2.0",
+    "axios": "^0.17.1",
     "bootstrap": "^4.1.1",
     "fusioncharts": "^3.12.2",
+    "materialize-css": "^1.0.0-rc.1",
     "react": "^16.3.2",
     "react-circular-progressbar": "^0.8.0",
     "react-dom": "^16.3.2",

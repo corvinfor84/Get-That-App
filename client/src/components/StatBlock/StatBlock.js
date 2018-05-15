@@ -1,5 +1,19 @@
 import React from "react";
+import anime from 'animejs';
 import "./StatBlock.css";
+
+var popper = document.querySelector('div');
+
+var DomNode = anime({
+  targets: popper,
+  translateX: [
+    { value: 2000, duration: 800 },
+    { value: 0, duration: 800 }
+  ],
+  easing: 'easeOutExpo'
+});
+
+
 
  const StatBlock = (props) => (
 

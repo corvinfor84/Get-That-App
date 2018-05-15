@@ -1,0 +1,50 @@
+#saved-menu {
+	height: 100px;
+	width: 100px;
+	/*border: 2px solid yellow;*/
+	display: inline-block;
+	margin: 8px;
+}
+
+.saved-item-image {
+	height: 100%;
+	width: 100%;
+	/*float: left;*/
+	display: block;
+	border-radius: 10px;
+}
+
+.saved-item-image:hover {
+	border: 2px dashed silver;
+}
+
+.saved-price {
+	/*border: 2px solid green;*/
+	height: 25px;
+	width: 100%;
+	position: relative;
+	top: 5%;
+	display: block;
+	text-align: center;
+	
+}
+
+
+
+#saved-menu .saved-title {
+position:relative;
+top: 5px;
+left:0px;
+visibility:hidden;
+z-index: 20;
+background: silver;
+color: purple;
+width: 250px;
+overflow: hidden;
+padding: 4px;
+border-radius: 5px;
+}
+
+#saved-menu:hover .saved-title {
+visibility:visible;
+}
