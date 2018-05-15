@@ -5,7 +5,7 @@ import "./search.css";
  
 			<div className="col-md bg-secondary br-edges ml-auto searchPanel">
 				
-				<div className="lookUp">{props.search}</div>
+				{props.search}
 
 			</div>	
 
