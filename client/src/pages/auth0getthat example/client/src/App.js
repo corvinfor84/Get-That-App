@@ -92,8 +92,8 @@ class App extends Component {
             </nav>
           </Navbar.Header>
         </Navbar>
-        {/*<Sidebar />*/}
-        {/*<Trails />*/}
+        {/*<Menu />*/}
+        {/*<Dashboard />*/}
         <Footer />
       </div>
     );
