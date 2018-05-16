@@ -14,6 +14,14 @@ router.get("/api/purchases/:username", function(req, res){//should we change thi
     .catch(err => res.status(422).json(err));
 });
 
+router.get("/api/purchases/sorted/:username", function(req, res){//should we change this to /username? depends on auth0
+  db.Purchase
+    .find({username:req.params.username})
+    .sort({price: -1})
+    .then(dbPurchase => res.json(dbPurchase))
+    .catch(err => res.status(422).json(err));
+});
+
 router.post("/api/purchases", function(req, res){
   const purchase = {
     title: req.body.title,
@@ -21,7 +29,8 @@ router.post("/api/purchases", function(req, res){
     price: req.body.price,
     username: req.body.username,
     image: req.body.image,
-    units: req.body.units
+    units: req.body.units,
+    daily_save: req.body.daily_save
 
   };
   db.Purchase

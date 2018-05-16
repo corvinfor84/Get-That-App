@@ -36,19 +36,29 @@ let randNum = "$96.45";
 let randNum1 = "$1129.63";
 let randNum2 = "$343.12";
 let randNum3 = "$2396.66";
+const add = (a, b) => a + b;
 
 class Dashboard extends Component {
 	state = {
+		temp : 100,
 		items: [], //this is from website
 		purchases: [], //this is from db
+		sortedPurchases: [],
 		keyword: "", //this is from user
 		budget: "", //this is from user
 		saved_budget: "",
-		username: "Jason" //this is from autho0
+		username: "Jina" //this is from autho0
 	};
 
  	componentDidMount() {
+		this.getSortedResults();
 		this.getSavedResults();
+
+	}
+
+	componentDidUpdate(){
+		//console.log(this.state);
+		this.getSum(this.state.sortedPurchases); //delete this later
 	}
 
 	//handling user search to the web////////////////////////////////////
@@ -82,6 +92,7 @@ class Dashboard extends Component {
 	handleSearch = event => {
 		event.preventDefault();
 		this.getResults();
+
 	}
 
 	//can save to db
@@ -89,6 +100,7 @@ class Dashboard extends Component {
 		const purchase = this.state.items.find(purchase => purchase.title === title);
 		purchase["username"] = this.state.username;
 		purchase["units"] = 7;
+		purchase["daily_save"] = purchase.price / 7;
 		axios.post("/api/purchases", purchase).then(res => this.getSavedResults());
 		console.log(purchase);
 		console.log(this.state.purchases);
@@ -99,6 +111,7 @@ class Dashboard extends Component {
 		const purchase = this.state.items.find(purchase => purchase.title === title);
 		purchase["username"] = this.state.username;
 		purchase["units"] = 14;
+		purchase["daily_save"] = purchase.price / 14;
 		axios.post("/api/purchases", purchase).then(res => this.getSavedResults());
 	};
 
@@ -107,6 +120,7 @@ class Dashboard extends Component {
 		const purchase = this.state.items.find(purchase => purchase.title === title);
 		purchase["username"] = this.state.username;
 		purchase["units"] = 30;
+		purchase["daily_save"] = purchase.price / 30;
 		axios.post("/api/purchases", purchase).then(res => this.getSavedResults());
 		console.log(purchase);
 	};
@@ -122,6 +136,33 @@ class Dashboard extends Component {
       )
       .catch(err => console.log(err));
   };
+
+	getSortedResults = () => {
+		axios.get("/api/purchases/sorted/" + this.state.username)
+			.then(res =>
+				this.setState({
+					sortedPurchases: res.data
+				})
+			)
+			.catch(err => console.log(err));
+	};
+
+
+
+	getSum = array => {
+		let priceArray = [];
+		for (let value of array) {
+  			console.log(value);
+				priceArray.push(value.price);
+			}
+		console.log(priceArray);
+		let sum = 0;
+		for(let value of priceArray){
+			sum = sum + value;
+			console.log(sum);
+		}
+		return(sum);
+	};
 
 	//handling budget////////////////////////////////////
 	//this is for budget input and saving it into a seperate state value
@@ -164,14 +205,14 @@ class Dashboard extends Component {
 				<Row>
 					<StatBlock
 					title={`Sum of Purchases`}
-					amount={randNum}
-					progress={<CircularProgressbar percentage={11} initialAnimation={true}/>}
+					amount={'$' + this.getSum(this.state.sortedPurchases)}
+					progress={<CircularProgressbar percentage={((200/this.getSum(this.state.sortedPurchases))*100).toFixed(2)} initialAnimation={true}/>}
 					icon={cart}
 					/>
 					<StatBlock
 					title={`Purchase Budget`}
 					amount={randNum1}
-					progress={<CircularProgressbar percentage={20} initialAnimation={true}/>}
+					progress={<CircularProgressbar percentage={this.state.temp} initialAnimation={true}/>}
 					icon={budget}
 					/>
 					<StatBlock
