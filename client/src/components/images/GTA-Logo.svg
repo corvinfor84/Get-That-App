@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 19.1.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="gta-bear-4" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 560 560" style="enable-background:new 0 0 560 560;" xml:space="preserve">
+
+<defs>
+		<style type="text/css">
+			.st0, .st1, .st2, .st3, .st4, .st5, .st6, .st7, .st11 {
+				stroke-dasharray: 1200;
+				stroke-dashoffset: 0;
+				-webkit-animation: dash 4s linear forwards;
+				-moz-animation: dash 4s linear forwards;
+				animation: dash 4s linear forwards;
+			}
+
+			#gta-bear-4:hover .st0 {
+				fill: red;
+				transition: .8s; 
+			}
+
+			#gta-bear-4:hover .st1 {
+				fill: rgb(216, 180, 82);
+				transition: .8s; 
+			}
+
+			#gta-bear-4:hover .st7 {
+				fill: purple;
+				transition: .8s; 
+			}
+
+			@-webkit-keyframes dash {
+				from {
+					stroke-dashoffset: 1200;
+				}
+				to {
+					stroke-dashoffset: 0;
+				}
+			}
+
+		</style>
+	</defs>
+
+<style type="text/css">
+	/*Head, Hand(only hand), Outter Ears*/
+	.st0{fill:rgba(199, 178, 153, 1);stroke:#000000;stroke-width:2;stroke-miterlimit:10;}
+	/*Mouth Area*/
+	.st1{fill:rgba(198, 156, 109, 1);stroke:#000000;stroke-width:2;stroke-miterlimit:10;}
+	/*Inner Ear, Laptop Button*/
+	.st2{fill:rgba(115, 99, 87, 1);stroke:#000000;stroke-width:2;stroke-miterlimit:10;}
+	/*Eyes*/
+	.st3{fill:rgba(225, 225, 225, 0.9);stroke:#000000;stroke-width:2;stroke-miterlimit:10;}
+	/*Laptop Base*/
+	.st4{fill:rgba(204, 204, 204, 1);stroke:#000000;stroke-width:3;stroke-miterlimit:5;}
+	/*Laptop Screen Outter Frame*/
+	.st5{fill:rgba(204, 204, 204, 1);stroke:#000000;stroke-width:2;stroke-miterlimit:10;}
+	/*laptop Screen*/
+	.st6{fill:rgba(77, 77, 77, 1);stroke:#000000;stroke-width:2;stroke-miterlimit:10;}
+	/*TEXT COLOR*/
+	.st7{fill:silver;stroke:rgba(0, 0, 0, 1);stroke-width:2;stroke-miterlimit:10;}
+	.st8{font-family:'Impact';}
+	.st9{font-size:92px;}
+	.st10{font-size:80px;}
+	/*Fingers*/
+	.st11{fill:rgba(153, 134, 117, 1);stroke:#000000;stroke-miterlimit:10;}
+</style>
+<path class="st0" d="M330.2,225.5c0,40.3-23.8,41.5-53.2,41.5c-29.4,0-53.2-1.1-53.2-41.5s23.8-73,53.2-73
+	C306.4,152.4,330.2,185.1,330.2,225.5z"/>
+<path class="st1" d="M312.4,242.3c0,18.1-15.7,18.6-35,18.6s-35-0.5-35-18.6s15.7-32.8,35-32.8S312.4,224.2,312.4,242.3z"/>
+<ellipse class="st0" cx="277.1" cy="224.2" rx="6.5" ry="9.5"/>
+<path class="st3" d="M243.2,181.9c-4.2,8.7-3.4,18.1,1.6,21s12.5-1.9,16.7-10.6s3.4-18.1-1.6-21
+	C254.9,168.5,247.4,173.2,243.2,181.9z"/>
+<path class="st3" d="M309.5,181.9c4.2,8.7,3.4,18.1-1.6,21s-12.5-1.9-16.7-10.6c-4.2-8.7-3.4-18.1,1.6-21
+	C297.9,168.5,305.4,173.2,309.5,181.9z"/>
+<path class="st0" d="M237.6,175c-5.8,10.7-7.9,21-15.6,21c-9.9,0-18-9.2-18-20.5c0-11.3,8.1-20.5,18-20.5
+	C232,155,242.9,165.3,237.6,175z"/>
+<path class="st0" d="M313.8,171.6c5.8,10.7,7.9,21,15.6,21c9.9,0,18-9.2,18-20.5s-8.1-20.5-18-20.5S308.5,161.9,313.8,171.6z"/>
+<path class="st2" d="M235.5,178.4c-4,7.8-6,15.5-10.1,14.9c-5.3-0.7-8.8-8.3-7.8-16.9s6.1-15.1,11.3-14.3
+	C234.2,162.8,239.2,171.4,235.5,178.4z"/>
+<path class="st2" d="M316.1,175c4,7.8,6,15.5,10.1,14.9c5.3-0.7,8.8-8.3,7.8-16.9c-1-8.6-6.1-15.1-11.3-14.3
+	C317.4,159.4,312.4,168,316.1,175z"/>
+<path class="st4" d="M455.7,469.9H106c-9.7,0-17.6-7.9-17.6-17.6v0c0-3.2,2.6-5.9,5.9-5.9h372.5c3.2,0,5.9,2.6,5.9,5.9v0.6
+	C472.6,462.3,465,469.9,455.7,469.9z"/>
+<rect x="260.7" y="455" class="st2" width="41.7" height="7"/>
+<path class="st5" d="M453,446.5H104.3V284.7c0-9.8,7.9-17.7,17.7-17.7h313.3c9.8,0,17.7,7.9,17.7,17.7V446.5z"/>
+<path class="st6" d="M440.2,439.1H117.1V292.7c0-9.8,7.9-17.7,17.7-17.7h287.8c9.8,0,17.7,7.9,17.7,17.7V439.1z"/>
+<text transform="matrix(2 0 0 1 146 355.6667)" class="st7 st8 st9">GET</text>
+<text transform="matrix(2 0 0 1 124.0002 427.6664)" class="st7 st8 st10">THAT</text>
+<path class="st7" d="M251.4,186.6c-1.5,3.9-1.9,7.3-1,7.7s2.9-2.5,4.4-6.4c1.5-3.9,1.9-7.3,1-7.7S252.9,182.7,251.4,186.6z"/>
+<path class="st7" d="M301.4,186.6c1.5,3.9,1.9,7.3,1,7.7s-2.9-2.5-4.4-6.4c-1.5-3.9-1.9-7.3-1-7.7S299.9,182.7,301.4,186.6z"/>
+<ellipse transform="matrix(-0.9999 -1.174820e-002 1.174820e-002 -0.9999 203.088 607.1107)" class="st0" cx="103.3" cy="303" rx="15" ry="23.7"/>
+<ellipse transform="matrix(0.9999 1.174820e-002 -1.174820e-002 0.9999 3.5689 -1.3692)" class="st11" cx="118.3" cy="303.1" rx="7" ry="8"/>
+<ellipse transform="matrix(0.9999 1.174820e-002 -1.174820e-002 0.9999 3.7789 -1.2833)" class="st11" cx="111.1" cy="321" rx="7" ry="8"/>
+<ellipse transform="matrix(0.9999 1.174820e-002 -1.174820e-002 0.9999 3.3449 -1.3262)" class="st11" cx="114.6" cy="284" rx="7" ry="8"/>
+<ellipse transform="matrix(0.9999 -1.174820e-002 1.174820e-002 0.9999 -3.5634 5.3116)" class="st0" cx="450.3" cy="306" rx="15" ry="23.7"/>
+<ellipse transform="matrix(-0.9999 1.174820e-002 -1.174820e-002 -0.9999 874.2155 607.0479)" class="st11" cx="435.3" cy="306.1" rx="7" ry="8"/>
+<ellipse transform="matrix(-0.9999 1.174820e-002 -1.174820e-002 -0.9999 888.8474 642.7949)" class="st11" cx="442.5" cy="324" rx="7" ry="8"/>
+<ellipse transform="matrix(-0.9999 1.174820e-002 -1.174820e-002 -0.9999 881.5445 568.9135)" class="st11" cx="439.1" cy="287" rx="7" ry="8"/>
+</svg>
