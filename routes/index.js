@@ -7,10 +7,9 @@ const qp = require("query-parse"); // may need this on the front end to send key
 
 // API routes
 // can add more later
-router.get("/api/purchases", function(req, res){//should we change this to /username? depends on auth0
+router.get("/api/purchases/:username", function(req, res){//should we change this to /username? depends on auth0
   db.Purchase
-    .find(req.query)
-    .sort({ goal_date: -1 })
+    .find({username:req.params.username})
     .then(dbPurchase => res.json(dbPurchase))
     .catch(err => res.status(422).json(err));
 });
@@ -20,8 +19,9 @@ router.post("/api/purchases", function(req, res){
     title: req.body.title,
     link: req.body.link,
     price: req.body.price,
-    username: "Jina",
-    image: req.body.image
+    username: req.body.username,
+    image: req.body.image,
+    units: req.body.units
 
   };
   db.Purchase
