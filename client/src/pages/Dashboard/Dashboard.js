@@ -199,9 +199,6 @@ class Dashboard extends Component {
 						}
 					/>
 				</Row>
-				<Row>
-					<LogoButton />
-				</Row>
 			</Container>
 		</Wrapper>
 			);
