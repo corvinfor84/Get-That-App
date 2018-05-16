@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Navbar, Button } from 'react-bootstrap';
-// import Sidebar from "./components/Navbar/Navbar";
-// import Trails from "./components/Wrapper/Wrapper";
+// import Navbar from "./components/Navbar/Navbar";
+// import Wrapper from "./components/Wrapper/Wrapper";
 import './App.css';
 
 class App extends Component {
