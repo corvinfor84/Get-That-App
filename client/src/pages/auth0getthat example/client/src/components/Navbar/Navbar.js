@@ -1,25 +1,30 @@
 import React from "react";
-import "./Navbar.css";
+import "./nav.css";
+// import menu from "../images/menu.png";
 
+let showIt = false;
 
-const Navbar = () => (
-  <nav className="navbar navbar-expand-lg py-3 fixed-top navbar-dark bg-dark">
-    <a className="navbar-brand" href="/">
-      <img src="/assets/img/logo.png" className="d-inline-block align-top logo" width="100%" alt="Greenboots logo"></img>
-    </a>  
-    <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-      <span className="navbar-toggler-icon"></span>
-    </button>
-    <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
-      <div className="navbar-nav">
-        <a className="nav-item nav-link" href="/">Home</a>
-        <a className="nav-item nav-link" href="/trails">Popular Trails</a>
-        <a className="nav-item nav-link" href="/">Contact</a>
-        <a className="nav-item nav-link" href="/">Login</a>
-        <a className="nav-item nav-link" href="/">Register</a>
-    </div> 
-  </div>
-</nav>
+let show = () => {
+	var x = document.getElementById("drop-nav");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
+}
+
+const logMessage = "welcome, ";
+
+ const Nav = (props) => (	 
+	 	<div className="container">
+	 		<div className="our-nav">
+	 			<div className="menu-icon" onClick={show}><i className="material-icons">menu</i></div>
+	 				<div className="logged-in">{logMessage} {props.login}</div>
+	 					<div className="get-that-logo">{props.getThatLogo}</div>
+	 						<div className="budget">Budget: {props.userBudget}</div>
+	 		</div>	
+	 		<div className="more-nav" id="drop-nav" style={{display: showIt ? 'block' : 'none' }}></div>
+	 	</div>
 );
 
-export default Navbar;
+export default Nav;
