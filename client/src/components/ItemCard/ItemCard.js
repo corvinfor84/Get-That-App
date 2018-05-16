@@ -1,6 +1,6 @@
 import React from "react";
 import "./itemcard.css";
- 
+
  const ItemCard = (props) => (
 
 			<div className="item-block">
@@ -9,21 +9,21 @@ import "./itemcard.css";
 						<div className="item-price"><strong>Price: </strong>{props.price}</div>
 									<div className="item-PB-btn">
 										<button
-										onClick={() => props.handlePurchaseSave(props.title)}
+										onClick={() => props.handlePurchaseSave7(props.title)}
 										type="button"
 										className="btn btn-outline-light btn-sm value-btn"
 										value={`7`}
 										>Purchase in 7 days</button>
 
 										<button
-										onClick={props.watchAndCalculate}
+										onClick={() => props.handlePurchaseSave14(props.title)}
 										type="button"
 										className="btn btn-outline-light btn-sm value-btn"
 										value={`14`}
 										>Purchase in 14 days</button>
 
 										<button
-										onClick={props.watchAndCalculate}
+										onClick={() => props.handlePurchaseSave30(props.title)}
 										type="button"
 										className="btn btn-outline-light btn-sm value-btn"
 										value={`30`}

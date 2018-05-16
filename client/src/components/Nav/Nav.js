@@ -15,15 +15,15 @@ let show = () => {
 
 const logMessage = "welcome, ";
 
- const Nav = (props) => (	 
+ const Nav = (props) => (
 	 	<div className="container">
 	 		<div className="our-nav">
 	 			<div className="menu-icon" onClick={show}><i className="material-icons">menu</i></div>
-	 				<div className="logged-in">{logMessage} {props.login}</div>
+	 				<div className="logged-in">{logMessage} {props.username}</div>
 	 					<div className="get-that-logo">{props.getThatLogo}</div>
 	 						<div className="budget">Budget: {props.userBudget}</div>
-	 						
-	 		</div>	
+
+	 		</div>
 	 		<div className="more-nav" id="drop-nav" style={{display: showIt ? 'block' : 'none' }}></div>
 	 	</div>
 );

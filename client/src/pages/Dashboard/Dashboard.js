@@ -43,10 +43,11 @@ class Dashboard extends Component {
 		keyword: "", //this is from user
 		budget: "", //this is from user
 		saved_budget: "",
-		username: "Jina" //this is from autho0
+		username: "Jason" //this is from autho0
 	};
 
  	componentDidMount() {
+		this.getSavedResults();
 	}
 
 	//handling user search to the web////////////////////////////////////
@@ -83,13 +84,43 @@ class Dashboard extends Component {
 	}
 
 	//can save to db
-	handlePurchaseSave = title => {
+	handlePurchaseSave7 = title => {
 		const purchase = this.state.items.find(purchase => purchase.title === title);
-		axios.post("/api/purchases", purchase).then(res => this.getResults());
+		purchase["username"] = this.state.username;
+		purchase["units"] = 7;
+		axios.post("/api/purchases", purchase).then(res => this.getSavedResults());
+		console.log(purchase);
+		console.log(this.state.purchases);
+	};
+
+	//can save to db for 14
+	handlePurchaseSave14 = title => {
+		const purchase = this.state.items.find(purchase => purchase.title === title);
+		purchase["username"] = this.state.username;
+		purchase["units"] = 14;
+		axios.post("/api/purchases", purchase).then(res => this.getSavedResults());
+	};
+
+	//can save to db for 30
+	handlePurchaseSave30 = title => {
+		const purchase = this.state.items.find(purchase => purchase.title === title);
+		purchase["username"] = this.state.username;
+		purchase["units"] = 30;
+		axios.post("/api/purchases", purchase).then(res => this.getSavedResults());
 		console.log(purchase);
 	};
 
-
+	//get saved purchases for user from db
+	getSavedResults = () => {
+		console.log(this.state.username);
+    axios.get("/api/purchases/" + this.state.username)
+      .then(res =>
+        this.setState({
+          purchases: res.data
+        })
+      )
+      .catch(err => console.log(err));
+  };
 
 	//handling budget////////////////////////////////////
 	//this is for budget input and saving it into a seperate state value
@@ -175,23 +206,26 @@ class Dashboard extends Component {
 										price={`$` + itemcomponent.price}
 										link = {itemcomponent.link}
 										watchAndCalculate={this.watchAndCalculate}
-										handlePurchaseSave = {this.handlePurchaseSave}
+										handlePurchaseSave7 = {this.handlePurchaseSave7}
+										handlePurchaseSave14 = {this.handlePurchaseSave14}
+										handlePurchaseSave30 = {this.handlePurchaseSave30}
 								/>
 							)}
 					/>
 				</Row>
 
 				<Row>
-					<SearchPanel 
-						search={<Carousel 
+					<SearchPanel
+						search={<Carousel
 									savedItemCards={
-										this.state.items.map(saveditem =>
-											<SavedCard 
+										this.state.purchases.map(saveditem =>
+											<SavedCard
 												key={saveditem.title}
 												id={saveditem.title}
 												savedImage={saveditem.image}
 												savedprice={`$` + saveditem.price}
 												savedTitle={saveditem.title}
+												username = {saveditem.username}
 											/>
 									)}
 								/>
