@@ -1,7 +1,7 @@
 import React from "react";
 
 const CallbackComponent = () => (
-    <img src="url('./background1.jpg" />
+    <img src="../../public/assets/img/boots.jpg" />
   );
   
   export default CallbackComponent;
