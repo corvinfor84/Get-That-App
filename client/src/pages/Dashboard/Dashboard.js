@@ -10,6 +10,7 @@ import ItemCard from "../../components/ItemCard";
 import SearchPanel from "../../components/SearchPanel";
 import Carousel from "../../components/Carousel";
 import SavedCard from "../../components/SavedCard";
+import LogoButton from "../../components/LogoButton";
 //import SearchItemInput from "../../components/SearchItemInput";
 //import SearchItemBtn from "../../components/SearchItemBtn";
 //import ShowSearchDisplay from "../../components/ShowSearchDisplayBox";
@@ -197,6 +198,9 @@ class Dashboard extends Component {
 								/>
 						}
 					/>
+				</Row>
+				<Row>
+					<LogoButton />
 				</Row>
 			</Container>
 		</Wrapper>
