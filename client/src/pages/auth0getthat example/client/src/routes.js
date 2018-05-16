@@ -21,7 +21,7 @@ export const makeMainRoutes = () => {
       <div>
         <Route path="/" render={props => <App auth={auth} {...props} />} />
         <Route path="/home" render={props => <Home auth={auth} {...props} />} />
-      {/*<Route path="/trails" render={props => <Trails auth={auth} {...props} />} />*/}
+      {/*<Route path="/menu" render={props => <Menu auth={auth} {...props} />} />*/}
         <Route
           path="/profile"
           render={props =>
