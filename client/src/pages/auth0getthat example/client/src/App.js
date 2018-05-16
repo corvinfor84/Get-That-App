@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import { Navbar, Button } from 'react-bootstrap';
-// import Sidebar from "./components/Sidebar/Sidebar";
-// import Trails from "./components/Trails/Trails";
-import Footer from "./components/Footer/Footer";
+// import Sidebar from "./components/Navbar/Navbar";
+// import Trails from "./components/Wrapper/Wrapper";
 import './App.css';
 
 class App extends Component {
@@ -32,7 +31,7 @@ class App extends Component {
             <nav className="navbar navbar-expand-lg py-3 fixed-top navbar-dark bg-dark">
 
               <a onClick={this.goTo.bind(this, 'home')}>
-                <img src="/assets/img/logo.png" className="d-inline-block align-top logo" width="100%" alt="Greenboots logo"></img>
+                <img src="//images/GTA-Logo.svg" className="d-inline-block align-top logo" width="100%" alt="GetThat logo"></img>
               </a>
 
               <button
@@ -51,7 +50,7 @@ class App extends Component {
               <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div className="navbar-nav">
                   <a className="nav-item nav-link" href="/">Home</a>
-                  <a className="nav-item nav-link"  onClick={this.goTo.bind(this, 'trails')}>Popular Trails</a>
+                  <a className="nav-item nav-link"  onClick={this.goTo.bind(this, 'menu')}>Menu</a>
                   <a className="nav-item nav-link" href="/">Contact</a>
                   {/*<a className="nav-item nav-link" href="/">Login/Register</a>
                     <a className="nav-item nav-link" href="/">Register</a>*/}
