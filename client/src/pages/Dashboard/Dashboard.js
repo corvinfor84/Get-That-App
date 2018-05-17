@@ -31,11 +31,6 @@ import sum from "../../components/images/sum.png";
 import defaultProfilePic from "../../components/images/default-profile.png";
 
 
-// Dummy Data - Discard when done!!!
-let randNum = "$96.45";
-let randNum1 = "$1129.63";
-let randNum2 = "$343.12";
-let randNum3 = "$2396.66";
 const add = (a, b) => a + b;
 
 class Dashboard extends Component {
@@ -44,6 +39,9 @@ class Dashboard extends Component {
 		items: [], //this is from website
 		purchases: [], //this is from db
 		sortedPurchases: [],
+		day7: [],
+		day14: [],
+		day30: [],
 		keyword: "", //this is from user
 		budget: "", //this is from user
 		saved_budget: "",
@@ -58,7 +56,8 @@ class Dashboard extends Component {
 
 	componentDidUpdate(){
 		//console.log(this.state);
-		this.getSum(this.state.sortedPurchases); //delete this later
+		// this.getSum(this.state.sortedPurchases); 
+		
 	}
 
 	//handling user search to the web////////////////////////////////////
@@ -104,6 +103,7 @@ class Dashboard extends Component {
 		axios.post("/api/purchases", purchase).then(res => this.getSavedResults());
 		console.log(purchase);
 		console.log(this.state.purchases);
+		console.log(this.state.day7);
 	};
 
 	//can save to db for 14
@@ -137,6 +137,17 @@ class Dashboard extends Component {
       .catch(err => console.log(err));
   };
 
+  sevenDayAdd = () => {
+  	console.log(this.state.username);
+    axios.get("/api/purchases/" + this.state.username)
+      .then(res =>
+        this.setState({
+          day7: res.data
+        })
+      )
+      .catch(err => console.log(err));
+  };
+
 	getSortedResults = () => {
 		axios.get("/api/purchases/sorted/" + this.state.username)
 			.then(res =>
@@ -152,14 +163,14 @@ class Dashboard extends Component {
 	getSum = array => {
 		let priceArray = [];
 		for (let value of array) {
-  			console.log(value);
+  			// console.log(value);
 				priceArray.push(value.price);
 			}
-		console.log(priceArray);
+		// console.log(priceArray);
 		let sum = 0;
 		for(let value of priceArray){
 			sum = sum + value;
-			console.log(sum);
+			// console.log(sum);
 		}
 		return(sum);
 	};
@@ -186,13 +197,6 @@ class Dashboard extends Component {
 	//need something here to handle saving budget input and user profile into db
 	//need to save to db
 
-	watchAndCalculate = (value) => {
-
-		// this function should add the item to the db and do the calculation. or contain a seperate function
-	   // inside this function that handles the calculation based on the value of which button was pressed.
-	   // THIS FUNCTION IS LINKED TO ITEM CARD WHICH IS NESTED INSIDE OF USERCHART.
-	   console.log("Watch & Calculate");
-	}
 
 	render() {
 		return (
@@ -204,27 +208,27 @@ class Dashboard extends Component {
 			<Container>
 				<Row>
 					<StatBlock
-					title={`Sum of Purchases`}
+					title={`Sum of 7-Day`}
 					amount={'$' + this.getSum(this.state.sortedPurchases)}
 					progress={<CircularProgressbar percentage={((200/this.getSum(this.state.sortedPurchases))*100).toFixed(2)} initialAnimation={true}/>}
 					icon={cart}
 					/>
 					<StatBlock
-					title={`Purchase Budget`}
-					amount={randNum1}
+					title={`Sum of 14-Day`}
+					amount={0}
 					progress={<CircularProgressbar percentage={this.state.temp} initialAnimation={true}/>}
 					icon={budget}
 					/>
 					<StatBlock
-					title={`Sum of Watched`}
-					amount={randNum2}
+					title={`Sum of 30-Day`}
+					amount={0}
 					progress={<CircularProgressbar percentage={87} initialAnimation={true}/>}
 					icon={sum}
 					/>
 					<StatBlock
-					title={`Watched Budget`}
-					amount={randNum3}
-					progress={<CircularProgressbar percentage={46} initialAnimation={true}/>}
+					title={`Sum of Watched`}
+					amount={0}
+					progress={<CircularProgressbar percentage={300/100} initialAnimation={true}/>}
 					icon={eye}
 					/>
 				</Row>
@@ -232,7 +236,6 @@ class Dashboard extends Component {
 					<UserChart
 						handleInputChange_budget = {this.handleInputChange_budget}
 						handleInputChange = {this.handleInputChange}
-						btnName={`Set Budget`}
 						userPicture={defaultProfilePic}
 						username={this.state.username}
 						//handleSetBudget = {this.handleSetBudget} //pushData
