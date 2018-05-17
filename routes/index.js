@@ -22,6 +22,30 @@ router.get("/api/purchases/sorted/:username", function(req, res){//should we cha
     .catch(err => res.status(422).json(err));
 });
 
+router.get("/api/purchases/day7/:username", function(req, res){
+  db.Purchase
+    .find({username:req.params.username, units: 7})
+    .sort({price: -1})
+    .then(dbPurchase => res.json(dbPurchase))
+    .catch(err => res.status(422).json(err));
+});
+
+router.get("/api/purchases/day14/:username", function(req, res){
+  db.Purchase
+    .find({username:req.params.username, units: 14})
+    .sort({price: -1})
+    .then(dbPurchase => res.json(dbPurchase))
+    .catch(err => res.status(422).json(err));
+});
+
+router.get("/api/purchases/day30/:username", function(req, res){
+  db.Purchase
+    .find({username:req.params.username, units: 30})
+    .sort({price: -1})
+    .then(dbPurchase => res.json(dbPurchase))
+    .catch(err => res.status(422).json(err));
+});
+
 router.post("/api/purchases", function(req, res){
   const purchase = {
     title: req.body.title,

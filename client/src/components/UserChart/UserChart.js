@@ -48,8 +48,6 @@ import SetBudgetInput from "../SetBudgetInput";
 														{props.showSearch}
 												</div>
 											</div>
-
-												{props.children}
 			</div>
 
 );

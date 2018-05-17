@@ -28,14 +28,13 @@ import eye from "../../components/images/eye.png";
 import budget from "../../components/images/budget.png";
 import cart from "../../components/images/cart.png";
 import sum from "../../components/images/sum.png";
+import GTAnavLogo from "../../components/images/GTAnavLogo.svg";
 import defaultProfilePic from "../../components/images/default-profile.png";
 
-
-const add = (a, b) => a + b;
+const RandomKey = Math.floor(Math.random() * 20000 + 1);
 
 class Dashboard extends Component {
 	state = {
-		temp : 100,
 		items: [], //this is from website
 		purchases: [], //this is from db
 		sortedPurchases: [],
@@ -45,20 +44,33 @@ class Dashboard extends Component {
 		keyword: "", //this is from user
 		budget: "", //this is from user
 		saved_budget: "",
-		username: "Jina" //this is from autho0
+		username: "cornell" //this is from autho0
 	};
 
  	componentDidMount() {
 		this.getSortedResults();
 		this.getSavedResults();
-
+		this.get7day()
+		this.get14day()
+		this.get30day()
+		
 	}
 
 	componentDidUpdate(){
-		//console.log(this.state);
-		// this.getSum(this.state.sortedPurchases); 
-		
+		// console.log(this.state.day7);
+		// setInterval(() => this.get7day(), 2000)
+		// setInterval(() => this.get14day(), 2000)
+		// setInterval(() => this.get30day(), 2000)
+		// setInterval(() => this.getSortedResults(), 2000)
+		this.getSortedResults();
+		this.get7day()
+		this.get14day()
+		this.get30day()
 	}
+
+	// componentWillReceiveProps(nextProps){
+
+	// }
 
 	//handling user search to the web////////////////////////////////////
 	//this is for search input
@@ -71,7 +83,6 @@ class Dashboard extends Component {
 
 	//get results from web
 	getResults = () => {
-		console.log(this.state.keyword)
 		axios.get("/api/scrape", {params:{
 			keyword: this.state.keyword
 		}})
@@ -94,6 +105,9 @@ class Dashboard extends Component {
 
 	}
 
+// 7 DAY BUTTON LOGIC //
+// 7 DAY BUTTON LOGIC //
+// 7 DAY BUTTON LOGIC //
 	//can save to db
 	handlePurchaseSave7 = title => {
 		const purchase = this.state.items.find(purchase => purchase.title === title);
@@ -101,10 +115,21 @@ class Dashboard extends Component {
 		purchase["units"] = 7;
 		purchase["daily_save"] = purchase.price / 7;
 		axios.post("/api/purchases", purchase).then(res => this.getSavedResults());
-		console.log(purchase);
-		console.log(this.state.purchases);
-		console.log(this.state.day7);
 	};
+
+	get7day = () => {
+    axios.get("/api/purchases/day7/" + this.state.username)
+      .then(res =>
+        this.setState({
+          day7: res.data
+        })
+      )
+      .catch(err => console.log(err));
+  };
+
+// 14 DAY BUTTON LOGIC //
+// 14 DAY BUTTON LOGIC //
+// 14 DAY BUTTON LOGIC //
 
 	//can save to db for 14
 	handlePurchaseSave14 = title => {
@@ -115,6 +140,20 @@ class Dashboard extends Component {
 		axios.post("/api/purchases", purchase).then(res => this.getSavedResults());
 	};
 
+	get14day = () => {
+    axios.get("/api/purchases/day14/" + this.state.username)
+      .then(res =>
+        this.setState({
+          day14: res.data
+        })
+      )
+      .catch(err => console.log(err));
+  };
+
+// 30 DAY BUTTON LOGIC //
+// 30 DAY BUTTON LOGIC //
+// 30 DAY BUTTON LOGIC //
+
 	//can save to db for 30
 	handlePurchaseSave30 = title => {
 		const purchase = this.state.items.find(purchase => purchase.title === title);
@@ -122,27 +161,24 @@ class Dashboard extends Component {
 		purchase["units"] = 30;
 		purchase["daily_save"] = purchase.price / 30;
 		axios.post("/api/purchases", purchase).then(res => this.getSavedResults());
-		console.log(purchase);
 	};
 
-	//get saved purchases for user from db
-	getSavedResults = () => {
-		console.log(this.state.username);
-    axios.get("/api/purchases/" + this.state.username)
+	get30day = () => {
+    axios.get("/api/purchases/day30/" + this.state.username)
       .then(res =>
         this.setState({
-          purchases: res.data
+          day30: res.data
         })
       )
       .catch(err => console.log(err));
   };
 
-  sevenDayAdd = () => {
-  	console.log(this.state.username);
+	//get saved purchases for user from db
+	getSavedResults = () => {
     axios.get("/api/purchases/" + this.state.username)
       .then(res =>
         this.setState({
-          day7: res.data
+          purchases: res.data
         })
       )
       .catch(err => console.log(err));
@@ -157,8 +193,6 @@ class Dashboard extends Component {
 			)
 			.catch(err => console.log(err));
 	};
-
-
 
 	getSum = array => {
 		let priceArray = [];
@@ -183,52 +217,38 @@ class Dashboard extends Component {
 	    });
 	  };
 
-	// getSaved_budget = () => {
-	// 	this.setState({
-	// 		saved_budget: this.state.budget
-	// 	});
-	// }
-	//
-	// handleSetBudget = event => {
-	// 	event.preventDefault();
-	// 	this.getSaved_budget();
-	// }
-
-	//need something here to handle saving budget input and user profile into db
-	//need to save to db
-
-
 	render() {
 		return (
 		<Wrapper>
 			<Nav
 				username = {this.state.username}
 				userBudget={`$` + this.state.budget}
+				getThatLogo={GTAnavLogo}
 			/>
 			<Container>
 				<Row>
 					<StatBlock
-					title={`Sum of 7-Day`}
-					amount={'$' + this.getSum(this.state.sortedPurchases)}
-					progress={<CircularProgressbar percentage={((200/this.getSum(this.state.sortedPurchases))*100).toFixed(2)} initialAnimation={true}/>}
+					title={`7-Day Items`}
+					amount={'$' + this.getSum(this.state.day7).toFixed(2)}
+					progress={<CircularProgressbar percentage={((this.getSum(this.state.day7)/this.state.budget)*100).toFixed(2)} initialAnimation={true}/>}
 					icon={cart}
 					/>
 					<StatBlock
-					title={`Sum of 14-Day`}
-					amount={0}
-					progress={<CircularProgressbar percentage={this.state.temp} initialAnimation={true}/>}
+					title={`14-Day Items`}
+					amount={`$` + this.getSum(this.state.day14).toFixed(2)}
+					progress={<CircularProgressbar percentage={((this.getSum(this.state.day14)/this.state.budget)*100).toFixed(2)} initialAnimation={true}/>}
 					icon={budget}
 					/>
 					<StatBlock
-					title={`Sum of 30-Day`}
-					amount={0}
-					progress={<CircularProgressbar percentage={87} initialAnimation={true}/>}
+					title={`30-Day Items`}
+					amount={`$` + this.getSum(this.state.day30).toFixed(2)}
+					progress={<CircularProgressbar percentage={((this.getSum(this.state.day30)/this.state.budget)*100).toFixed(2)} initialAnimation={true}/>}
 					icon={sum}
 					/>
 					<StatBlock
-					title={`Sum of Watched`}
-					amount={0}
-					progress={<CircularProgressbar percentage={300/100} initialAnimation={true}/>}
+					title={`Watched Total`}
+					amount={`$` + this.getSum(this.state.sortedPurchases).toFixed(2)}
+					progress={<CircularProgressbar percentage={((this.getSum(this.state.sortedPurchases)/this.state.budget)*100).toFixed(2)} initialAnimation={true}/>}
 					icon={eye}
 					/>
 				</Row>
@@ -238,13 +258,12 @@ class Dashboard extends Component {
 						handleInputChange = {this.handleInputChange}
 						userPicture={defaultProfilePic}
 						username={this.state.username}
-						//handleSetBudget = {this.handleSetBudget} //pushData
 						keyword = {this.state.keyword}
 						handleSearch = {this.handleSearch}
 
 						showSearch={this.state.items.map(itemcomponent =>
 								<ItemCard
-										key = {itemcomponent.title}
+										key={itemcomponent.title + RandomKey}
 										id={itemcomponent.title}
 										itemImage={itemcomponent.image}
 										title={itemcomponent.title}
@@ -265,7 +284,7 @@ class Dashboard extends Component {
 									savedItemCards={
 										this.state.purchases.map(saveditem =>
 											<SavedCard
-												key={saveditem.title}
+												key={saveditem.title + RandomKey}
 												id={saveditem.title}
 												savedImage={saveditem.image}
 												savedprice={`$` + saveditem.price}
