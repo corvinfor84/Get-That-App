@@ -6,7 +6,7 @@ import GTALogo from "../images/GTAnavLogo.svg";
  
 <div id="logo">
 
-<img src={GTALogo}/>
+<img src={GTALogo} id="press-it"/>
 
 </div>
 
