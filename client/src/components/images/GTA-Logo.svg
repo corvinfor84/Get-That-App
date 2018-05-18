@@ -13,17 +13,17 @@
 				animation: dash 4s linear forwards;
 			}
 
-			#gta-bear-4:hover .st0 {
+			#gta-bear-4:hover, .st0 {
 				fill: red;
 				transition: .8s; 
 			}
 
-			#gta-bear-4:hover .st1 {
+			#gta-bear-4:hover, .st1 {
 				fill: rgb(216, 180, 82);
 				transition: .8s; 
 			}
 
-			#gta-bear-4:hover .st7 {
+			#gta-bear-4:hover, .st7 {
 				fill: purple;
 				transition: .8s; 
 			}

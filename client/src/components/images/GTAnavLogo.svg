@@ -2,6 +2,44 @@
 <!-- Generator: Adobe Illustrator 19.1.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 395.3 326" style="enable-background:new 0 0 395.3 326;" xml:space="preserve">
+
+	 <defs>
+		<style type="text/css">
+			.st0, .st1, .st2, .st3, .st4, .st5, .st6, .st7, .st11 {
+				stroke-dasharray: 1200;
+				stroke-dashoffset: 0;
+				-webkit-animation: dash 4s linear forwards;
+				-moz-animation: dash 4s linear forwards;
+				animation: dash 4s linear forwards;
+			}
+
+			#gta-bear-4:hover .st0 {
+				fill: red;
+				transition: .8s; 
+			}
+
+			#gta-bear-4:hover, .st1 {
+				fill: rgb(216, 180, 82);
+				transition: .8s; 
+			}
+
+			#gta-bear-4:hover, .st7 {
+				fill: purple;
+				transition: .8s; 
+			}
+
+			@-webkit-keyframes dash {
+				from {
+					stroke-dashoffset: 1200;
+				}
+				to {
+					stroke-dashoffset: 0;
+				}
+			}
+
+		</style>
+	</defs>
+
 <style type="text/css">
 	.st0{fill:#C69C6D;stroke:#000000;stroke-width:2;stroke-miterlimit:10;}
 	.st1{fill:#8C6239;stroke:#000000;stroke-width:2;stroke-miterlimit:10;}
