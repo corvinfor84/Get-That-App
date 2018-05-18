@@ -349,7 +349,8 @@ logout() {
 												savedImage={saveditem.image}
 												savedprice={`$` + saveditem.price}
 												savedTitle={saveditem.title}
-												username = {saveditem.username}
+												username={saveditem.username}
+												saveLink={saveditem.link}
 											/>
 									)}
 								/>
@@ -361,7 +362,7 @@ logout() {
 			}
 			{
 			  !isAuthenticated() && (
-				  <h4>
+				  <h4 style={{color: 'silver', position: 'relative', left: '300px', top: '50px'}}>
 					You are not logged in! Please{' '}
 					<a
 					  style={{ cursor: 'pointer' }}

@@ -22,8 +22,8 @@ class App extends Component {
         <div className="container">
         {
 			!isAuthenticated() && (
-			    <div className="login-platform" onClick={this.login.bind(this)}>
-                    <Logo className="login-logo"
+			    <div id="login-platform" onClick={this.login.bind(this)}>
+                    <Logo id="login-logo"
                     />
             </div>)
 		} 
