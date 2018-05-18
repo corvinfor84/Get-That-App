@@ -28,38 +28,49 @@ import eye from "../../components/images/eye.png";
 import budget from "../../components/images/budget.png";
 import cart from "../../components/images/cart.png";
 import sum from "../../components/images/sum.png";
+import GTAnavLogo from "../../components/images/GTAnavLogo.svg";
 import defaultProfilePic from "../../components/images/default-profile.png";
 
-
-// Dummy Data - Discard when done!!!
-let randNum = "$96.45";
-let randNum1 = "$1129.63";
-let randNum2 = "$343.12";
-let randNum3 = "$2396.66";
-const add = (a, b) => a + b;
+const RandomKey = Math.floor(Math.random() * 20000 + 1);
 
 class Dashboard extends Component {
 	state = {
-		temp : 100,
 		items: [], //this is from website
 		purchases: [], //this is from db
 		sortedPurchases: [],
+		day7: [],
+		day14: [],
+		day30: [],
 		keyword: "", //this is from user
 		budget: "", //this is from user
 		saved_budget: "",
-		username: "Jina" //this is from autho0
+		username: "cornell" //this is from autho0
 	};
 
  	componentDidMount() {
 		this.getSortedResults();
 		this.getSavedResults();
-
+		this.get7day()
+		this.get14day()
+		this.get30day()
+		
 	}
 
 	componentDidUpdate(){
-		//console.log(this.state);
-		this.getSum(this.state.sortedPurchases); //delete this later
+		// console.log(this.state.day7);
+		// setInterval(() => this.get7day(), 2000)
+		// setInterval(() => this.get14day(), 2000)
+		// setInterval(() => this.get30day(), 2000)
+		// setInterval(() => this.getSortedResults(), 2000)
+		this.getSortedResults();
+		this.get7day()
+		this.get14day()
+		this.get30day()
 	}
+
+	// componentWillReceiveProps(nextProps){
+
+	// }
 
 	//handling user search to the web////////////////////////////////////
 	//this is for search input
@@ -72,7 +83,6 @@ class Dashboard extends Component {
 
 	//get results from web
 	getResults = () => {
-		console.log(this.state.keyword)
 		axios.get("/api/scrape", {params:{
 			keyword: this.state.keyword
 		}})
@@ -95,6 +105,9 @@ class Dashboard extends Component {
 
 	}
 
+// 7 DAY BUTTON LOGIC //
+// 7 DAY BUTTON LOGIC //
+// 7 DAY BUTTON LOGIC //
 	//can save to db
 	handlePurchaseSave7 = title => {
 		const purchase = this.state.items.find(purchase => purchase.title === title);
@@ -102,9 +115,21 @@ class Dashboard extends Component {
 		purchase["units"] = 7;
 		purchase["daily_save"] = purchase.price / 7;
 		axios.post("/api/purchases", purchase).then(res => this.getSavedResults());
-		console.log(purchase);
-		console.log(this.state.purchases);
 	};
+
+	get7day = () => {
+    axios.get("/api/purchases/day7/" + this.state.username)
+      .then(res =>
+        this.setState({
+          day7: res.data
+        })
+      )
+      .catch(err => console.log(err));
+  };
+
+// 14 DAY BUTTON LOGIC //
+// 14 DAY BUTTON LOGIC //
+// 14 DAY BUTTON LOGIC //
 
 	//can save to db for 14
 	handlePurchaseSave14 = title => {
@@ -115,6 +140,20 @@ class Dashboard extends Component {
 		axios.post("/api/purchases", purchase).then(res => this.getSavedResults());
 	};
 
+	get14day = () => {
+    axios.get("/api/purchases/day14/" + this.state.username)
+      .then(res =>
+        this.setState({
+          day14: res.data
+        })
+      )
+      .catch(err => console.log(err));
+  };
+
+// 30 DAY BUTTON LOGIC //
+// 30 DAY BUTTON LOGIC //
+// 30 DAY BUTTON LOGIC //
+
 	//can save to db for 30
 	handlePurchaseSave30 = title => {
 		const purchase = this.state.items.find(purchase => purchase.title === title);
@@ -122,12 +161,20 @@ class Dashboard extends Component {
 		purchase["units"] = 30;
 		purchase["daily_save"] = purchase.price / 30;
 		axios.post("/api/purchases", purchase).then(res => this.getSavedResults());
-		console.log(purchase);
 	};
+
+	get30day = () => {
+    axios.get("/api/purchases/day30/" + this.state.username)
+      .then(res =>
+        this.setState({
+          day30: res.data
+        })
+      )
+      .catch(err => console.log(err));
+  };
 
 	//get saved purchases for user from db
 	getSavedResults = () => {
-		console.log(this.state.username);
     axios.get("/api/purchases/" + this.state.username)
       .then(res =>
         this.setState({
@@ -147,19 +194,17 @@ class Dashboard extends Component {
 			.catch(err => console.log(err));
 	};
 
-
-
 	getSum = array => {
 		let priceArray = [];
 		for (let value of array) {
-  			console.log(value);
+  			// console.log(value);
 				priceArray.push(value.price);
 			}
-		console.log(priceArray);
+		// console.log(priceArray);
 		let sum = 0;
 		for(let value of priceArray){
 			sum = sum + value;
-			console.log(sum);
+			// console.log(sum);
 		}
 		return(sum);
 	};
@@ -172,59 +217,38 @@ class Dashboard extends Component {
 	    });
 	  };
 
-	// getSaved_budget = () => {
-	// 	this.setState({
-	// 		saved_budget: this.state.budget
-	// 	});
-	// }
-	//
-	// handleSetBudget = event => {
-	// 	event.preventDefault();
-	// 	this.getSaved_budget();
-	// }
-
-	//need something here to handle saving budget input and user profile into db
-	//need to save to db
-
-	watchAndCalculate = (value) => {
-
-		// this function should add the item to the db and do the calculation. or contain a seperate function
-	   // inside this function that handles the calculation based on the value of which button was pressed.
-	   // THIS FUNCTION IS LINKED TO ITEM CARD WHICH IS NESTED INSIDE OF USERCHART.
-	   console.log("Watch & Calculate");
-	}
-
 	render() {
 		return (
 		<Wrapper>
 			<Nav
 				username = {this.state.username}
 				userBudget={`$` + this.state.budget}
+				getThatLogo={GTAnavLogo}
 			/>
 			<Container>
 				<Row>
 					<StatBlock
-					title={`Sum of Purchases`}
-					amount={'$' + this.getSum(this.state.sortedPurchases)}
-					progress={<CircularProgressbar percentage={((200/this.getSum(this.state.sortedPurchases))*100).toFixed(2)} initialAnimation={true}/>}
+					title={`7-Day Items`}
+					amount={'$' + this.getSum(this.state.day7).toFixed(2)}
+					progress={<CircularProgressbar percentage={((this.getSum(this.state.day7)/this.state.budget)*100).toFixed(2)} initialAnimation={true}/>}
 					icon={cart}
 					/>
 					<StatBlock
-					title={`Purchase Budget`}
-					amount={randNum1}
-					progress={<CircularProgressbar percentage={this.state.temp} initialAnimation={true}/>}
+					title={`14-Day Items`}
+					amount={`$` + this.getSum(this.state.day14).toFixed(2)}
+					progress={<CircularProgressbar percentage={((this.getSum(this.state.day14)/this.state.budget)*100).toFixed(2)} initialAnimation={true}/>}
 					icon={budget}
 					/>
 					<StatBlock
-					title={`Sum of Watched`}
-					amount={randNum2}
-					progress={<CircularProgressbar percentage={87} initialAnimation={true}/>}
+					title={`30-Day Items`}
+					amount={`$` + this.getSum(this.state.day30).toFixed(2)}
+					progress={<CircularProgressbar percentage={((this.getSum(this.state.day30)/this.state.budget)*100).toFixed(2)} initialAnimation={true}/>}
 					icon={sum}
 					/>
 					<StatBlock
-					title={`Watched Budget`}
-					amount={randNum3}
-					progress={<CircularProgressbar percentage={46} initialAnimation={true}/>}
+					title={`Watched Total`}
+					amount={`$` + this.getSum(this.state.sortedPurchases).toFixed(2)}
+					progress={<CircularProgressbar percentage={((this.getSum(this.state.sortedPurchases)/this.state.budget)*100).toFixed(2)} initialAnimation={true}/>}
 					icon={eye}
 					/>
 				</Row>
@@ -232,16 +256,14 @@ class Dashboard extends Component {
 					<UserChart
 						handleInputChange_budget = {this.handleInputChange_budget}
 						handleInputChange = {this.handleInputChange}
-						btnName={`Set Budget`}
 						userPicture={defaultProfilePic}
 						username={this.state.username}
-						//handleSetBudget = {this.handleSetBudget} //pushData
 						keyword = {this.state.keyword}
 						handleSearch = {this.handleSearch}
 
 						showSearch={this.state.items.map(itemcomponent =>
 								<ItemCard
-										key = {itemcomponent.title}
+										key={itemcomponent.title + RandomKey}
 										id={itemcomponent.title}
 										itemImage={itemcomponent.image}
 										title={itemcomponent.title}
@@ -262,7 +284,7 @@ class Dashboard extends Component {
 									savedItemCards={
 										this.state.purchases.map(saveditem =>
 											<SavedCard
-												key={saveditem.title}
+												key={saveditem.title + RandomKey}
 												id={saveditem.title}
 												savedImage={saveditem.image}
 												savedprice={`$` + saveditem.price}

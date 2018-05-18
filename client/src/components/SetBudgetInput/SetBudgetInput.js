@@ -17,27 +17,13 @@ const PushData = (e) => {
  		name="budgetVal"
  		value={props.bV}
  		onChange={props.handleInputChange_budget}
- 		placeholder=" Enter budget"
+ 		placeholder=" Enter Budget"
  		required
  		/>
  	</div>
- 	<div className="button-row">
-		<button
-		//onClick={props.handleSetBudget}
-	  type="submit"
-		className="btn btn-outline-light btn-sm set-budget-btn"
-		>
-			{props.btnName1}
-		</button>
-	</div>
+ 	
 </form>
-			<button
-			onClick={props.removeBudget}
-			type="button"
-			className="btn btn-outline-light btn-sm set-budget-btn-clr"
-			>
-				{props.btnName}
-			</button>
+		
 </div>
 );
 

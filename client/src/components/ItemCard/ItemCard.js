@@ -12,21 +12,21 @@ import "./itemcard.css";
 										onClick={() => props.handlePurchaseSave7(props.title)}
 										type="button"
 										className="btn btn-outline-light btn-sm value-btn"
-										value={`7`}
+										value={7}
 										>Purchase in 7 days</button>
 
 										<button
 										onClick={() => props.handlePurchaseSave14(props.title)}
 										type="button"
 										className="btn btn-outline-light btn-sm value-btn"
-										value={`14`}
+										value={14}
 										>Purchase in 14 days</button>
 
 										<button
 										onClick={() => props.handlePurchaseSave30(props.title)}
 										type="button"
 										className="btn btn-outline-light btn-sm value-btn"
-										value={`30`}
+										value={30}
 										>Purchase in 30 days</button>
 
 									</div>

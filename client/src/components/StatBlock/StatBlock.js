@@ -2,15 +2,17 @@ import React from "react";
 import anime from 'animejs';
 import "./StatBlock.css";
 
-var popper = document.querySelector('div');
+var slide = document.querySelector('div');
 
 var DomNode = anime({
-  targets: popper,
+  targets: slide,
   translateX: [
     { value: 2000, duration: 800 },
     { value: 0, duration: 800 }
   ],
-  easing: 'easeOutExpo'
+  rotate: '1turn',
+  easing: 'easeOutExpo',
+  duration: 2100
 });
 
 
