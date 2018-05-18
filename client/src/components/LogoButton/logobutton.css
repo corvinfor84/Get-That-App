@@ -1,4 +1,40 @@
 #logo {
-	height: 400px;
-	width: 400px;
+	height: 500px;
+	width: 500px;
 }
+
+#press-it:hover {
+				
+			  -webkit-animation-name: logowiggle;
+			  -ms-animation-name: logowiggle;
+			  -ms-animation-duration: 1000ms;
+			  -webkit-animation-duration: 1000ms;
+			  -webkit-animation-iteration-count: 1;
+			  -ms-animation-iteration-count: 1;
+			  -webkit-animation-timing-function: ease-in-out;
+			  -ms-animation-timing-function: ease-in-out;
+}
+
+@-webkit-keyframes logowiggle {
+		  0% {-webkit-transform: rotate(10deg);}
+		  25% {-webkit-transform: rotate(-10deg);}
+		  50% {-webkit-transform: rotate(20deg);}
+		  75% {-webkit-transform: rotate(-5deg);}
+		  100% {-webkit-transform: rotate(0deg);}
+		}
+
+		@-ms-keyframes logowiggle {
+		  0% {-ms-transform: rotate(1deg);}
+		  25% {-ms-transform: rotate(-1deg);}
+		  50% {-ms-transform: rotate(1.5deg);}
+		  75% {-ms-transform: rotate(-5deg);}
+		  100% {-ms-transform: rotate(0deg);}
+		}
+
+		@keyframes logowiggle {
+		  0% {transform: rotate(10deg);}
+		  25% {transform: rotate(-10deg);}
+		  50% {transform: rotate(20deg);}
+		  75% {transform: rotate(-5deg);}
+		  100% {transform: rotate(0deg);}
+		}
