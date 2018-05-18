@@ -12,7 +12,7 @@ import "./setbudgetinput.css";
  		name="budgetVal"
  		value={props.budget}
  		onChange={props.handleInputChange_budget}
- 		placeholder=" Enter budget"
+ 		placeholder=" Enter Budget"
  		required
  		/>
  	</div>

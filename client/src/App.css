@@ -1,0 +1,19 @@
+.login-platform {
+	position: relative;
+	top: 100px;
+	left: 30%;
+	width: 1px;
+    height: 1px;
+}
+
+.login-logo {
+	width: 1px;
+    height: 1px;
+    animation-name: example;
+    animation-duration: 4s;
+}
+
+@keyframes example {
+    from {background-color: red;}
+    to {background-color: yellow;}
+}

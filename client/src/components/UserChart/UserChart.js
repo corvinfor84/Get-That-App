@@ -10,7 +10,7 @@ import SetBudgetInput from "../SetBudgetInput";
 						<div className="user-name"><strong>{props.username}</strong></div>
 							<div className="set-budget">
 								<SetBudgetInput
-                handleInputChange_budget = {props.handleInputChange_budget}
+                handleInputChange_budget={props.handleInputChange_budget}
                 budget = {props.budget}
 								/>
 							</div>
@@ -18,14 +18,14 @@ import SetBudgetInput from "../SetBudgetInput";
 
 										<div className="searchBtn">
                     <form>
-                      <div className = "form-group">
+                      <div className="form-group">
                         <input
-                          className = "search-item-input input-group"
+                          className="search-item-input input-group"
                           id="keyword"
                           type="text"
                           value={props.keyword}
-                          placeholder=" Search/Shop"
-                          name = "keyword"
+                          placeholder=" Search / Shop"
+                          name="keyword"
                           onChange={props.handleInputChange}
                           required
                           />

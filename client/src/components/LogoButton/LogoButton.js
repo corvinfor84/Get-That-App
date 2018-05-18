@@ -1,6 +1,6 @@
 import React from "react";
 import "./logobutton.css";
-import GTALogo from "../images/GTA-Logo.svg";
+import GTALogo from "../images/GTAnavLogo.svg";
 
  const LogoButton = (props) => (
  

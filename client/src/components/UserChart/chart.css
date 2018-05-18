@@ -6,7 +6,8 @@
 .search-item-btn {
 	position: relative;
 	left: 0%;
-	margin-top: 5px;
+	margin-top: 0px;
+	width: 100%;
 }
 
 .br-edges {
