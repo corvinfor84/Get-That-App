@@ -80,7 +80,7 @@ router.get("/api/scrape", function(req, res){
         }
       }
     });
-    results = results.slice(2,);
+    results = results.slice(2);
     return(results);
   })
   //.then ((results) => {console.log(results)})

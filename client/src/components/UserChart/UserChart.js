@@ -11,15 +11,10 @@ import SetBudgetInput from "../SetBudgetInput";
 							<div className="set-budget">
 								<SetBudgetInput
                 handleInputChange_budget = {props.handleInputChange_budget}
-                bV = {props.bV}
-								btnName={props.btnName1}
-								btnName1={props.btnName}
-                //pushData = {props.handleSetBudget}
+                budget = {props.budget}
 								/>
 							</div>
-								<div className="setBudgetBtn">{props.BudgetBtn}
-									<span>{props.clearBudget}</span>
-								</div>
+
 
 										<div className="searchBtn">
                     <form>
@@ -29,7 +24,7 @@ import SetBudgetInput from "../SetBudgetInput";
                           id="keyword"
                           type="text"
                           value={props.keyword}
-                          placeholder="search"
+                          placeholder=" Search/Shop"
                           name = "keyword"
                           onChange={props.handleInputChange}
                           required
@@ -52,8 +47,6 @@ import SetBudgetInput from "../SetBudgetInput";
 														{props.showSearch}
 												</div>
 											</div>
-
-												{props.children}
 			</div>
 
 );

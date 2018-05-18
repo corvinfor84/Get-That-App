@@ -1,17 +1,36 @@
-import React from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Dashboard from "./pages/Dashboard";
+import React, { Component } from 'react';
 
-//most likely don't need router as we use auth0
-//not sure
-const App = () => (
-  <Router>
-    <div>
-      <Switch>
-        <Route exact path="/dashboard" component={Dashboard} />
-      </Switch>
-    </div>
-  </Router>
-);
+class App extends Component {
+    goTo(route) {
+      this.props.history.replace(`/${route}`)
+    }
+  
+    login() {
+      this.props.auth.login();
+    }
+  
+    logout() {
+      this.props.auth.logout();
+    }
+  
+    render() {
+      const { isAuthenticated } = this.props.auth;
 
+      return (
+        <div className="container">
+        {
+			!isAuthenticated() && (
+			    <div className="col-xs-12 jumbotron text-center">
+                    <h1>WISHLIST</h1>
+                    <p>PLEASE SIGN IN!</p>
+                    <a className="btn btn-primary btn-lg btn-login btn-block" onClick={this.login.bind(this)}>Sign In</a>
+            </div>)
+		} 
+        </div>);
+    }
+  
+      
+}
+
+  
 export default App;

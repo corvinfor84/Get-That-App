@@ -10,7 +10,7 @@ import ItemCard from "../../components/ItemCard";
 import SearchPanel from "../../components/SearchPanel";
 import Carousel from "../../components/Carousel";
 import SavedCard from "../../components/SavedCard";
-import LogoButton from "../../components/LogoButton";
+//import LogoButton from "../../components/LogoButton";
 //import SearchItemInput from "../../components/SearchItemInput";
 //import SearchItemBtn from "../../components/SearchItemBtn";
 //import ShowSearchDisplay from "../../components/ShowSearchDisplayBox";
@@ -19,7 +19,7 @@ import LogoButton from "../../components/LogoButton";
 // NPM/External Component Imports
 //don't need seperate utils/API...too much work and confusion
 import axios from "axios";
-import qp from "query-parse";
+//import qp from "query-parse";
 import CircularProgressbar from 'react-circular-progressbar';
 // CircularProgress Bar CSS
 import "./style.css";
@@ -32,11 +32,10 @@ import defaultProfilePic from "../../components/images/default-profile.png";
 
 
 // Dummy Data - Discard when done!!!
-let randNum = "$96.45";
+//let randNum = "$96.45";
 let randNum1 = "$1129.63";
 let randNum2 = "$343.12";
 let randNum3 = "$2396.66";
-const add = (a, b) => a + b;
 
 class Dashboard extends Component {
 	state = {
@@ -93,6 +92,10 @@ class Dashboard extends Component {
 		event.preventDefault();
 		this.getResults();
 
+	}
+
+	handleSums = () => {
+		this.getSum(this.state.sortedPurchases);
 	}
 
 	//can save to db
