@@ -20,11 +20,13 @@ const logMessage = "welcome, ";
 	 		<div className="our-nav">
 	 			<div className="menu-icon" onClick={show}><i className="material-icons">menu</i></div>
 	 				<div className="logged-in">{logMessage} {props.username}</div>
-	 					<div className="get-that-logo">{props.getThatLogo}</div>
+	 					<img src={props.getThatLogo} className="get-that-logo"/>
 	 						<div className="budget">Budget: {props.userBudget}</div>
 
 	 		</div>
-	 		<div className="more-nav" id="drop-nav" style={{display: showIt ? 'block' : 'none' }}></div>
+	 		<div className="more-nav" id="drop-nav" style={{display: showIt ? 'block' : 'none' }}>
+	 			<div className="logout-button">{props.logoutbtn}</div>
+	 		</div>
 	 	</div>
 );
 

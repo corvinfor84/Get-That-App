@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import Logo from "./components/LogoButton";
+import "./App.css";
 
 class App extends Component {
     goTo(route) {
@@ -20,10 +22,9 @@ class App extends Component {
         <div className="container">
         {
 			!isAuthenticated() && (
-			    <div className="col-xs-12 jumbotron text-center">
-                    <h1>WISHLIST</h1>
-                    <p>PLEASE SIGN IN!</p>
-                    <a className="btn btn-primary btn-lg btn-login btn-block" onClick={this.login.bind(this)}>Sign In</a>
+			    <div className="login-platform" onClick={this.login.bind(this)}>
+                    <Logo className="login-logo"
+                    />
             </div>)
 		} 
         </div>);

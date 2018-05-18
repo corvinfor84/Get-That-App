@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Button } from 'react-bootstrap';
+// import "./home.css";
 //import {Navbar, Button} from 'react-bootstrap';
 //import { Link } from "react-router-dom";
 // Component Imports
@@ -31,6 +32,7 @@ import budget from "../../components/images/budget.png";
 import cart from "../../components/images/cart.png";
 import sum from "../../components/images/sum.png";
 import defaultProfilePic from "../../components/images/default-profile.png";
+import GTAnavLogo from "../../components/images/GTAnavLogo.svg";
 
 class Home extends Component {
 	constructor(props) {
@@ -267,14 +269,16 @@ logout() {
           <Nav
 				    username = {this.state.username}
 				    userBudget={`$` + this.state.budget}
+				    getThatLogo={GTAnavLogo}
+				    logoutbtn={<Button
+					            bsStyle="primary"
+					            className="btn btn-outline-light btn-sm search-item-btn aiden"
+					            onClick={this.logout.bind(this)}
+					          >
+					            Log Out
+					          </Button>}
 			    />
-          <Button
-            bsStyle="primary"
-            className="btn-margin"
-            onClick={this.logout.bind(this)}
-          >
-            Log Out
-          </Button>
+          
         <Container>
 				<Row>
 					<StatBlock
