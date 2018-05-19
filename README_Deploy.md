@@ -1,23 +1,33 @@
 # Deployment
 
-In this activity we will deploy the React Reading List application to Heroku.
+Here I document the steps I needed to take to deploy Get-That-App to Heroku
 
 ## Instructions
 
-* Deploy the React Reading List application to Heroku. Make sure to perform the following:
+  * Initialize the project folder as a git repo. (`git init`)
 
-  * Initialize the project folder as a git repo.
-
-  * Create a Heroku app for the React Reading List App.
-
-  * Add a MongoLab Addon for the React Reading List Heroku app.
+  * Create a Heroku app for the Get-That-App. (`heroku login`, `git remote -v`, `heroku create`)
+  
+  * Add a MongoLab Addon from the Heroku website.
 
   * Run `yarn build` from within the project folder.
+  
+  * Change `Auth.js` callback URI to your heroku app's newly created url, add this url to trusted list in Auth0 (currently Auth0 under Jina's account. if you want to switch to your own account, make sure to signup with Auth0 and select single-page React app)
+  
+  * Run `yarn build` from within client.
+  
+  * `git add *`, `git commit -m 'comment'` from project folder
+   
+  * `git push heroku origin`
+  
+  * `git add -f 'client\build'`, `git commit -m 'build folder'` (this is needed since heroku ignores the build folder but needs it)
+  
+  * `git push heroku origin`
+  
 
-### Hints
+### Known problems
+* app only works with http link, not https - don't know why
 
-* Make sure you add and commit all changes before pushing up to Heroku.
+* http://serene-plains-92431.herokuapp.com/
 
-* If your deployment fails, run `heroku logs` while in the project directory. This should print all of the logs produced from the failed deployment. Usually the issue can be found at the start of any errors.
 
-* Ask an instructor or TA for help if you get stuck. Help your neighbor if you finish early!
