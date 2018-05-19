@@ -8,6 +8,7 @@ export default class Auth {
     domain: 'aidan1228.auth0.com',
     clientID: 'AAk3_SG7pgjIye_8usZ_-j11LG-nOjPJ',
     redirectUri: 'https://serene-plains-92431.herokuapp.com/callback',
+    
     audience: 'https://aidan1228.auth0.com/userinfo',
     responseType: 'token id_token',
     scope: 'openid profile email'
