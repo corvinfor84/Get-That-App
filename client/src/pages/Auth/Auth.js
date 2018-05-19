@@ -5,10 +5,10 @@ export default class Auth {
 
 
   auth0 = new auth0.WebAuth({
-    domain: 'aidan1228.auth0.com',
-    clientID: 'AAk3_SG7pgjIye_8usZ_-j11LG-nOjPJ',
-    redirectUri: 'http://localhost:3000/callback',
-    audience: 'https://aidan1228.auth0.com/userinfo',
+    domain: 'jinana3.auth0.com',
+    clientID: '0e2ycegZvxPnMJ3MHftyLXoxbR2YikKz',
+    redirectUri: 'http://serene-plains-92431.herokuapp.com/callback',
+    audience: 'https://jinana3.auth0.com/userinfo',
     responseType: 'token id_token',
     scope: 'openid profile email'
   });
