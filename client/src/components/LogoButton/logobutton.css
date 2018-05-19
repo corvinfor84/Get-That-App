@@ -4,37 +4,27 @@
 }
 
 #press-it:hover {
-				
-			  -webkit-animation-name: logowiggle;
-			  -ms-animation-name: logowiggle;
-			  -ms-animation-duration: 1000ms;
-			  -webkit-animation-duration: 1000ms;
-			  -webkit-animation-iteration-count: 1;
-			  -ms-animation-iteration-count: 1;
-			  -webkit-animation-timing-function: ease-in-out;
-			  -ms-animation-timing-function: ease-in-out;
+  animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+
 }
 
-@-webkit-keyframes logowiggle {
-		  0% {-webkit-transform: rotate(10deg);}
-		  25% {-webkit-transform: rotate(-10deg);}
-		  50% {-webkit-transform: rotate(20deg);}
-		  75% {-webkit-transform: rotate(-5deg);}
-		  100% {-webkit-transform: rotate(0deg);}
-		}
+@keyframes shake {
+  10%, 90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+  
+  20%, 80% {
+    transform: translate3d(2px, 0, 0);
+  }
 
-		@-ms-keyframes logowiggle {
-		  0% {-ms-transform: rotate(1deg);}
-		  25% {-ms-transform: rotate(-1deg);}
-		  50% {-ms-transform: rotate(1.5deg);}
-		  75% {-ms-transform: rotate(-5deg);}
-		  100% {-ms-transform: rotate(0deg);}
-		}
+  30%, 50%, 70% {
+    transform: translate3d(-4px, 0, 0);
+  }
 
-		@keyframes logowiggle {
-		  0% {transform: rotate(10deg);}
-		  25% {transform: rotate(-10deg);}
-		  50% {transform: rotate(20deg);}
-		  75% {transform: rotate(-5deg);}
-		  100% {transform: rotate(0deg);}
-		}
+  40%, 60% {
+    transform: translate3d(4px, 0, 0);
+  }
+}
